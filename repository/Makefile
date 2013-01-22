@@ -11,10 +11,15 @@ all:
 	@echo " run-dev   -  Run project in developer mode (no persistence)"
 	@echo " run-prod  -  Run project in productive mode (MySQL database)"
 	@echo " dist      -  Create a war file that can be deployed in a servlet container"
+	@echo " upgrade   -  Upgrade to another grails version"
 
 check:
-	@[ -f "`which ${GRAILS}`" ] || (echo "Install ${GRAILS} first"; exit 1;)
+	@[ -f "`which ${GRAILS}`" ] || (echo "Install '${GRAILS}' first and add the executable to your path."; exit 1;)
 
+
+upgrade: check
+	@${GRAILS} upgrade
+	@${GRAILS} install-templates
 
 assemble: check
 	@rm -fr "${BUILD_DIR}"
