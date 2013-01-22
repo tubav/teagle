@@ -13,16 +13,14 @@ hibernate {
 environments {
     development {//database only in memory
         dataSource {
-            dbCreate = "create-drop" // one of 'create', 'create-drop','update'
-            url = "jdbc:hsqldb:mem:devDB"
+            dbCreate = "create" // one of 'create', 'create-drop','update'
+            url = "jdbc:hsqldb:mem:db/devDB"
         }
     }
     test {
         dataSource {//database persistent in a file
             dbCreate = "update"
-            //url = "jdbc:hsqldb:mem:testDb"
-            //url = "jdbc:hsqldb:file:prodDb"
-            url = "jdbc:h2:mem:devDb"
+            url = "jdbc:hsqldb:file:db/testDb"
         }
     }
 //    production {

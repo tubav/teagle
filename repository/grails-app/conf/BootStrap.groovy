@@ -28,7 +28,7 @@ class BootStrap {
 
      def init = { servletContext ->
         if (GrailsUtil.environment == GrailsApplication.ENV_DEVELOPMENT) {
-    //        fixtureLoader.load("states")
+                fixtureLoader.load("states")
                 fixtureLoader.load("people")
                 fixtureLoader.load("resources")
         }
@@ -37,8 +37,13 @@ class BootStrap {
             if (!Person.findByUserName("root")){
                 fixtureLoader.load("states")
                 fixtureLoader.load("people")
-     //           fixtureLoader.load("resources")
+                fixtureLoader.load("resources")
             }
+        }
+        else if (GrailsUtil.environment == GrailsApplication.ENV_TEST){
+                fixtureLoader.load("states")
+                fixtureLoader.load("people")
+                fixtureLoader.load("resources")
         }
 
         // Staging Repository
