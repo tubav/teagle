@@ -1,0 +1,29 @@
+/**
+ * </copyright>
+ *
+ * 2008-2010 © Waterford Institute of Technology (WIT),
+ *              TSSG, EU FP7 ICT Panlab.
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Apache License v2.0
+ * which accompanies this distribution, and is available at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * author: Shane Fox, Eamonn Power
+ *
+ * </copyright>
+ *
+ * This class represents a completed configuration.
+ *
+ */
+
+class Configuration extends ConfigurationBase {
+
+    static belongsTo = ConfigurationBase
+        
+    static hasMany = [configurationBases:ConfigurationBase,
+                        configurationParamComposite:ConfigParamComposite]
+    
+    static constraints = {
+    }
+}

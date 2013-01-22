@@ -1,0 +1,14 @@
+syntax: glob
+*.class
+.metadata
+.*.swp
+*.jar
+*.zip
+.*.swo
+.svn
+*~
+*.war
+*.log
+
+CoreRepository/target
+
