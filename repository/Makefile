@@ -8,7 +8,8 @@ all:
 	@echo "Possible targets:"
 	@echo " check     -  Check your environment for the needed requirements"
 	@echo " clean     -  Cleanup project"
-	@echo " run-dev   -  Run project in developer mode (no persistence)"
+	@echo " run-test  -  Run project in developer mode (file database)"
+	@echo " run-dev   -  Run project in developer mode (memory database)"
 	@echo " run-prod  -  Run project in productive mode (MySQL database)"
 	@echo " dist      -  Create a war file that can be deployed in a servlet container"
 	@echo " upgrade   -  Upgrade to another grails version"
@@ -37,9 +38,13 @@ clean: check
 	@rm -fr "${BUILD_DIR}" "${DIST_DIR}" "${TARGET_DIR}"
 	@${GRAILS} clean
 
+run-test: check
+	@echo "Running in testing mode..."
+	@grails -Dserver.host=0.0.0.0 -Dserver.port=8080 test run-app
+
 run-dev: check
 	@echo "Running in developer mode..."
-	@grails -Dserver.host=0.0.0.0 -Dserver.port=8080 test run-app
+	@grails -Dserver.host=0.0.0.0 -Dserver.port=8080 dev run-app
 
 run-prod: check
 	@echo "Running in productive mode..."
