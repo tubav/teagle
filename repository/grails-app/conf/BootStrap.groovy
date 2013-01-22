@@ -40,11 +40,6 @@ class BootStrap {
                 fixtureLoader.load("resources")
             }
         }
-        else if (GrailsUtil.environment == GrailsApplication.ENV_TEST){
-                fixtureLoader.load("states")
-                fixtureLoader.load("people")
-                fixtureLoader.load("resources")
-        }
 
         // Staging Repository
         else if ((GrailsUtil.environment != GrailsApplication.ENV_DEVELOPMENT) && (GrailsUtil.environment != GrailsApplication.ENV_PRODUCTION) && (GrailsUtil.environment != GrailsApplication.ENV_TEST)){
