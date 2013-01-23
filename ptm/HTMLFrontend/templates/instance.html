@@ -1,0 +1,111 @@
+<html>
+	<head>
+		<title>Information from ${id}</title>
+
+		<style type="text/css">
+			p {
+				
+				color:#444444;
+				font-family:Verdana,Arial,Helvetica,sans-serif;
+				font-size:9pt;
+				font-weight:normal;
+				line-height:12pt;
+				text-align:left;
+				text-decoration:none;
+				
+			}
+			p2 {
+
+                                color:red;
+                                font-family:Verdana,Arial,Helvetica,sans-serif;
+                                font-size:9pt;
+                                font-weight:normal;
+                                line-height:12pt;
+                                text-align:left;
+                                text-decoration:none;
+
+                        }
+
+			a {
+				color:#444444;
+                                font-family:Verdana,Arial,Helvetica,sans-serif;
+                                font-size:9pt;
+				font-style:italic;
+                                font-weight:normal;
+                                line-height:12pt;
+                                text-align:left;
+			}
+
+			h1 {
+                               color:#444444;
+                                font-family:Verdana,Arial,Helvetica,sans-serif;
+                                font-size:12pt;
+                                font-weight:normal;
+                                line-height:12pt;
+                                text-align:left;
+			}
+
+                        h2 {
+                                color:#179C7D;
+                                font-family:Verdana,Arial,Helvetica,sans-serif;
+                                font-size:10pt;
+                                font-weight:bold;
+                                line-height:11pt;
+                                margin-bottom:1pt;
+                                margin-top:15pt;
+                        }
+
+	</style>
+
+
+	</head>
+	<body>
+        <a href="http://www.av.tu-berlin.de"><img src="http://www.tu-berlin.de/fileadmin/Aperto_design/img/logo_01.gif" border="0" alt="tub logo"/></a>
+
+	<br />
+		%if msg:
+			<center><b>${msg}</b></center>
+			<br/>
+		%endif
+		<br />
+		%if p_id != "/":
+			<a href="${url('/show/' + p_id)}">Go back to List</a> |
+		%endif
+		<a href="${url('/show/')}">Go back to Root</a>
+		<br />
+		%if entity is not None:
+			<h2>Information for ${entity.identifier}:</h2><br />
+			<form method="POST" action="${url(entity.identifier)}">
+			<table border="0">
+			<tr><td><p><b>identifier</b></p></td><td><p>(string)</p></td><td><p>${config["identifier"][0]}</p></td><td>&nbsp;</td></tr>
+			%for k, v in config.iteritems():
+				%if k != "identifier":
+				<tr>
+				<td><p><b>${k}:</b></p></td>
+				<td><p>(${v[1]})</p></td>
+				<td><p>
+				%if v[1] == "boolean":
+					<select name="${v[1]}-${k}">
+						<option>True</option>
+						<option ${v[0] and ' ' or 'selected="selected"'}>False</option>
+					</select>
+				%else:
+					<input type="text" name="${v[1]}-${k}" value="${v[0]}" size="30"/>
+				%endif
+				</p></td>
+				</tr>
+				%endif
+			%endfor
+			</table>
+			<br />
+	        <input type="submit" name="submit" value="Update">
+	        <% delurl = url('/del/' + entity.identifier) %>
+			<input type="button" name="del" value="Delete" onclick="window.location.href='${delurl}'" >
+			</form>
+			<a href="${url(entity.identifier)}/">list children of this instance</a>
+		%endif
+
+</html>
+
+
+

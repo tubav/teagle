@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<title>Add instance at ${id}</title>
+
+	      <style type="text/css">
+                        p {
+
+                                color:#444444;
+                                font-family:Verdana,Arial,Helvetica,sans-serif;
+                                font-size:9pt;
+                                font-weight:normal;
+                                line-height:12pt;
+                                text-align:left;
+                                text-decoration:none;
+
+                        }
+
+                        a {
+                                color:#444444;
+                                font-family:Verdana,Arial,Helvetica,sans-serif;
+                                font-size:9pt;
+                                font-style:italic;
+                                line-height:12pt;
+                                text-align:left;
+                        }
+
+                        h1 {
+                               color:#444444;
+                                font-family:Verdana,Arial,Helvetica,sans-serif;
+                                font-size:12pt;
+                                font-weight:normal;
+                                line-height:12pt;
+                                text-align:left;
+                        }
+
+			h2 {
+				color:#179C7D;
+				font-family:Verdana,Arial,Helvetica,sans-serif;
+				font-size:10pt;
+				font-weight:bold;
+				line-height:11pt;
+				margin-bottom:1pt;
+				margin-top:15pt;
+			}
+
+
+	        </style>
+<!--		<script type="text/javascript">
+		
+		functios popup (url) {
+			 win = window.open(url, "Popupfenster", "width=400,height=300,resizable=yes");
+			 win.focus();
+			 return false;
+		}
+		</script>
+-->
+
+		<script type="text/javascript">
+		function FensterOeffnen (Adresse) {
+			MeinFenster = window.open(Adresse, "Zweitfenster", "width=300,height=400,left=100,top=200");
+		    	MeinFenster.focus();
+		}
+		</script>
+
+
+	</head>
+	<body>
+        <a href="http://www.av.tu-berlin.de"><img src="http://www.tu-berlin.de/fileadmin/Aperto_design/img/logo_01.gif" border="0" alt="tub logo"/></a>
+	<br />
+	%if msg:
+		<center><b>${msg}</b></center>
+		<br/>
+	%endif
+	<h2>Add a new Resource Instance at ${id}</h2>
+	<br />
+	<form action="." method="POST">
+		<fieldset>
+			<label for="typename">Typename:</label><input name="typename" id="typename" value="${typename}"/>
+				%if typeerror:
+					<span class="formerror">${typeerror}</span>
+				%endif
+			<br />
+			%for k, (name, type, value, error) in enumerate(params):
+				Parameter ${k + 1} - <label for="param${k}_name">Name</label> <input name="param${k}_name" id="param${k}_name" value="${name}" /> <label for="param${k}_type">Type</label> <select name="param${k}_type" id="param${k}_type">
+				%for t in types:
+					<option ${t == type and 'selected="selected"' or ''}>${t}</option>
+				%endfor
+				</select> <label for="param${k}_value">Value</label> <input name="param${k}_value" id="param${k}_value" value="${value}" />
+				%if error:
+					<span class="formerror">${error}</span>
+				%endif
+				<br />
+			%endfor
+			<input type="button" value="cancel" onclick="window.location.href='${url(id)}'" /> <input type="submit" />
+		</fieldset>
+	</form>
+	<br/>
+
+	</body>
+</html>

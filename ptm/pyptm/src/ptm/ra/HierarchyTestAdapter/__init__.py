@@ -1,0 +1,1 @@
+from HierarchyTestAdapter import HierarchyTestAdapter
