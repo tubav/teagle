@@ -1,0 +1,7 @@
+<table>
+{% for field, value in  entity.values %}
+{% if field.display_inline %}
+    <tr>{% if entity.fieldcount > 1 %}<th>{{ field.label }}</th>{% endif %}<td>{%if value != None %}{{ value }}{% endif %}</td></tr>
+{% endif %}
+{% endfor %}
+</table>

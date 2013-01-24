@@ -1,0 +1,25 @@
+.ui-pg-table .ui-paging-info {
+    margin-top: 0;
+}
+
+.ui-jqgrid-htable, .ui-jqgrid-htable th, .ui-jqgrid-htable td, .ui-jqgrid-htable tr {
+	vertical-align: middle;
+}
+
+.ui-pg-input {
+	width: auto;
+	display: inline;
+	padding: 1px;
+	height: auto;
+}
+
+.ui-pg-selbox {
+	padding: 1px;	
+}
+
+#controls {position: absolute; top: 0; right: 0; padding-right: 1.8em;}
+#controls input {display:inline;top:0;position:static;}
+#controls form {display:inline;}
+.gridfilter {position:absolute;right:20px;}
+.gridfilter select {display:inline;width: auto;margin:0; padding: 0; position:relative;top:-1px;}
+.ui-jqgrid-btable td{ vertical-align: middle }

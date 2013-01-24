@@ -1,0 +1,40 @@
+<section class="" id="entity-details">
+<section class="">
+    <table cellspacing="1" cellpadding="1" style="font-size:14px">
+    {% for field, value in  values %}
+        <tr><th style="padding: 2px">{{ field.label }}</th><td style="padding: 2px">{% if value != None %}{{ value }}{% endif %}</td></tr>
+    {% endfor %}
+    </table>
+    
+    {% if allow_edit %}
+    <a href="./edit?id={{ entity.id }}&entity_type={{ entity.typename }}" class="button">edit {{ entity.display_typename }}</a>
+        {% if have_password %}
+            <a href="/en/accounts/set-password/?id={{ entity.id }}&entity_type={{ entity.typename }}" class="button">Set Password</a>
+        {% endif %}
+    {% endif %}
+    
+    {% if allow_delete %}
+    <a href="#" onclick="if (confirm('Delete this {{ entity.display_typename }}?')) window.location.href='{% url repoactions "delete" %}?id={{ entity.id }}&entity_type={{ entity.typename }}'" class="button">delete {{ entity.display_typename }}</a>
+    {% endif %}
+    
+    {% for field, value in  complex_values %}
+        <section class="">
+            <h5><em class="name">{{ field.label }}</em></h5>
+                {{ value }}
+        </section>
+        {% endfor %}
+
+    </section>
+    
+    
+    {% for field, value in  lists %}
+        <section class="">
+            <h5><em class="name">{{ field.label }}</em></h5>
+                {{ value }}
+        </section>
+    {% endfor %}
+    {% if not is_inner %}
+
+        <a href="./list?entity_type={{ typename }}" class="button" style="top: 50px">Return to list of {{ entity.display_typename }}s</a>
+    {% endif %}
+</section>

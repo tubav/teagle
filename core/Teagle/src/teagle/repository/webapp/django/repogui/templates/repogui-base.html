@@ -1,0 +1,27 @@
+<html>
+<head>
+	<title>Welcome to Teagle</title>
+    <script src="/static/script/jquery-1.6.2.min.js"> </script>
+	<script src="/static/script/jquery-ui-1.8.16.custom.min.js" type="text/javascript"> </script> 
+	<script src="/static/script/jqgrid/i18n/grid.locale-en.js" type="text/javascript"> </script>
+	<script src="/static/script/jqgrid/jquery.jqGrid.min.js" type="text/javascript"> </script>
+    <script src="/static/script/gridhelper.js"> </script>
+
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/static/style/eggplant/jquery-ui-1.8.16.custom.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/static/style/ui.jqgrid.css" />
+</head>
+<body>
+<header>
+<h1>Welcome to Teagle</h1>
+<nav>
+	<a href="./list?entity_type=ResourceSpec" title="Resource Types">Resource Types</a>
+		<a href="./list?entity_type=Ptm" title="VCTs">PTMs</a>
+	<a href="./list?entity_type=Vct" title="VCTs">VCTs</a>
+	<a href="./list?entity_type=ResourceInstance" title="Resource Instances">Resource Instances</a>
+
+</nav>
+</header>
+{% block page %}{% endblock %}
+</body>
+</html>

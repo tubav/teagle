@@ -1,0 +1,14 @@
+{% extends "repogui-base.html" %}
+{% block page %}
+<section id="list-sites" class="list">
+<h2>List of {{ typename }}</h2>
+<table id="grid" class="bfgrid"><tr><td/></tr></table>
+<div id="grid_pager"></div> 
+{{grid}}
+</section>
+{% if can_add %}
+<nav>
+	<a href="./add?entity_type={{typename}}" class="button">add an item</a>
+</nav>
+{% endif %}
+{%endblock%}

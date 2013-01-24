@@ -1,0 +1,34 @@
+<ol class="list">
+    {% if items %}
+        {% for e, item in items %}
+            <li style="margin-bottom: 8px">{{ item }}
+            {% if allow_edit %}<a href="./edit/?id={{ e.id }}&entity_type={{ e.typename }}" class="button" style="font-size: 12px;">edit member</a>{% endif %}
+            {% if allow_remove %}<a href="{{action_remove}}?id={{ e.id }}&entity_type={{ e.typename }}&add_to={{add_to}}" class="smallbutton" style="font-size: 12px;">remove member</a>{% endif %}
+            </li>
+        {% endfor %}
+    {% else %}
+        <li>no elements</li>
+    {% endif %}
+</ol>
+
+{% if allow_edit %}
+<a href="./add?entity_type={{ typename }}&add_to={{ add_to }}" class="button">Add a new {{ prettytype }}</a>
+{% endif %}
+
+{% if selection %}
+     <section class="">
+        <h5><em class="name">add an existing {{ prettytype }}</em></h5>
+        <form action="{{action_add}}" method="POST">
+        <fieldset>
+            {% csrf_token %}
+            <input type="hidden" name="entity_type" value="{{ typename }}" />
+            <input type="hidden" name="add_to" value="{{ add_to }}" />
+            <select name="id">
+                {% for id, name in selection %}
+                    <option value="{{id}}">{{name}}</option>
+                {% endfor %}
+            </select> <input value="add" type="submit" class="submit button" />
+        </fieldset>
+        </form>
+    </section>
+{% endif %}

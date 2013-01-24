@@ -1,0 +1,42 @@
+{% extends "repogui-base.html" %}
+{% block page %}
+<h2>{{ header }}</h2>
+<section class="extended">
+	<form method="POST" action="{{action}}">
+		<input type="hidden" name="entity_type" value="{{ entity_type }}" />
+		<fieldset>
+		  {% csrf_token %}
+		  {% for f in form.fields %}
+		  	{% if not f.is_complex %}
+		  		<label for="{{ f.name }}">{{f.label}} &#160; <em class="error">{{ f.error }}</em> {{ f.render }}</label>
+		  	{% endif %}
+		  {% endfor %}
+		</fieldset>
+		
+		  {% for field in form.fields %}
+		  	{% if field.is_complex %}
+		  		<section class="">
+		  			<fieldset>
+		  			<h5><em class="name">{{ field.label }}</em></h5>
+					  {% for f in field.fields %}
+					  	{% if not f.is_complex %}
+					  		<label for="{{ f.name }}">{{f.label}} &#160; <em class="error">{{ f.error }}</em> {{ f.render }}</label>
+					  	{% endif %}
+					  {% endfor %}
+						{% for f in field.hidden_fields %}
+							{{ f.render }}
+						{% endfor %}
+		  			</fieldset>
+		  		</section>
+		  	{% endif %}
+		  {% endfor %}		  			
+		{% for f in form.hidden_fields %}
+			{{ f.render }}
+		{% endfor %}
+		{% if add_to %}
+			<input type="hidden" name="add_to" value="{{ add_to }}" />
+		{% endif %}
+		<input type="submit" class="submit button" value="submit"/>
+	</form>
+</section>
+{%endblock%}

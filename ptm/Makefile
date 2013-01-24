@@ -6,7 +6,7 @@ PTM_PORT=8010
 RA_SAMPLE_PORT=8011
 RA_SAMPLE=SimpleTestAdapter.SimpleTestAdapter.SimpleTestAdapter
 
-all:
+help:
 	@echo "Possible targets:"
 	@echo " check          -  Check your environment for the needed requirements"
 	@echo " clean          -  Cleanup project"
@@ -16,15 +16,15 @@ all:
 
 check:
 	@[ -f "`which python`" ] || (echo "Install 'python' first and add the executable to your path."; exit 1;)
-	@[ ! "`python -c 'import werkzeug' 2>&1`" ] || (echo "Install python module 'werkzeug' first."; exit 1;)
-	@[ ! "`python -c 'import mako' 2>&1`" ] || (echo "Install python module 'mako' first."; exit 1;)
+	@[ ! "`python -c 'import werkzeug' 2>&1`" ] || (echo "Install python module 'werkzeug' first, e.g. by running 'pip install werkzeug'."; exit 1;)
+	@[ ! "`python -c 'import mako' 2>&1`" ] || (echo "Install python module 'mako' first, e.g. by running 'pip install mako'."; exit 1;)
 
 compile:
 	@echo "Setting up..."; mkdir -p "${DIST_DIR}"
 	@echo "Installing PTMHub..."; cd PTMHub; make dist; cd ..
 	@echo "Installing PyPTM..."; cd pyptm; make dist; cd ..
 	@echo "Installing HTML frontend..."; mkdir -p "${DIST_DIR}/lib/HTMLFrontend"; cp -r HTMLFrontend/templates HTMLFrontend/src/HTMLFrontend/* "${DIST_DIR}/lib/HTMLFrontend"
-	@echo "Installing other libs..."; mkdir -p "${DIST_DIR}/lib"; cp -r lib/* "${DIST_DIR}/lib/"
+	@echo "Installing other libs..."; mkdir -p "${DIST_DIR}/lib"; cp -r ../lib/* "${DIST_DIR}/lib/"
 
 run-ptm: check compile
 	@echo "Running PTM..."

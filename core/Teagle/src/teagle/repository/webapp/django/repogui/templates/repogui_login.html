@@ -1,0 +1,10 @@
+{% extends "repogui_base" %}
+{% block main %}
+<h2><nav id="nav-sub">{% show_breadcrumb %}</nav>{% page_attribute "menu_title" %}</h2>
+<section class="teaser">
+	<p>{% placeholder page-teaser %}{% block page-teaser %}{% endblock %}</p>
+</section>
+<section class="extended">
+	<form method="POST" action="../actions/login"
+</section>
+{% endblock %}
