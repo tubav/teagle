@@ -3,6 +3,7 @@ DIST_DIR="`pwd`/dist"
 BUILD_DIR="`pwd`/build"
 TARGET_DIR="`pwd`/target"
 PTM_PORT=8010
+PTM_NAME="avptm"
 RA_SAMPLE_PORT=8011
 RA_SAMPLE=SimpleTestAdapter.SimpleTestAdapter.SimpleTestAdapter
 
@@ -28,7 +29,7 @@ compile:
 
 run-ptm: check compile
 	@echo "Running PTM..."
-	@PTM_HOME="${DIST_DIR}" "${DIST_DIR}/bin/ptmhub" "-p ${PTM_PORT}"
+	@PTM_HOME="${DIST_DIR}" "${DIST_DIR}/bin/ptmhub" "-p ${PTM_PORT}" -x "${PTM_NAME}"
 
 run-ra-sample: check compile
 	@echo "Running Sample RA..."
