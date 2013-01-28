@@ -1,0 +1,21 @@
+#! /bin/sh
+
+if test -z "$PTM_HOME"; then
+	PTM_HOME=`dirname $0`/..
+	export PTM_HOME=`readlink -f "$PTM_HOME"`
+	echo PTM_HOME is not set. Setting to $PTM_HOME
+fi
+
+MODULEDIR="$PTM_HOME/lib"
+
+if test -z "$PYTHONPATH"; then
+	export PYTHONPATH="$MODULEDIR"
+else
+	export PYTHONPATH="$PYTHONPATH:MODULEDIR"
+fi
+
+echo PYTHONPATH: $PYTHONPATH
+echo starting PTMHub...
+
+exec python "$MODULEDIR/ptmhub/hubserver.py" $@
+

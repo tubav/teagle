@@ -1,0 +1,47 @@
+#!/usr/bin/python
+
+from ptm.ManagerServer import ManagerServer
+from optparse import OptionParser
+
+def main():
+	import logging
+
+	parser = OptionParser()
+	parser.add_option("-a", "--packageadapter", action="store_true", dest = "packageadapter", default = False, help = "Start PackageAdapter")
+	parser.add_option("-x", "--xenadapter", action = "store_true", dest = "xenadapter", default = False, help = "Start XenAdapter")
+	parser.add_option("-n", "--nodeadapter", action = "store_true", dest = "nodeadapter", default = False, help = "Start NodeAdapter")
+	parser.add_option("-m", "--networkingadapter", action = "store_true", dest = "networkingadapter", default = False, help = "Start NetworkingAdapter")
+	parser.add_option("-s", "--systemuseradapter", action = "store_true", dest = "systemuseradapter", default = False, help = "Start SystemUserAdadpter")
+	parser.add_option("-r", "--ptmregistry", dest = "registry_url", help = "Address of the PTMRegistry")
+	parser.add_option("-e", "--parent", dest = "parent", help = "Sets parent for Pyromanager", default = None)
+	parser.add_option("-b", "--address", dest = "bind_address", help = "Address of the Pyromanager", default = None)
+	parser.add_option("-p", "--port", dest = "port", type = "int", help = "Port of the Pyromanager", default = None)
+	(options, args) = parser.parse_args()
+
+
+	logger = logging.getLogger("ptm")
+	console = logging.StreamHandler()
+	formatter = logging.Formatter('Manager: %(levelname)s [%(funcName)s(%(filename)s:%(lineno)s] - %(message)s')
+	console.setFormatter(formatter)
+	console.setLevel(logging.DEBUG)
+	logger.setLevel(logging.DEBUG)
+	logger.addHandler(console)
+
+	logfile = logging.FileHandler("/var/log/ptm/ManagerServer.log")
+	logfile.setFormatter(formatter)
+	logfile.setLevel(logging.DEBUG)
+	logger.addHandler(logfile)
+
+	try:
+		ManagerServer(parent = options.parent, bind_address = options.bind_address, port = options.port, registry_url = options.registry_url, nodeadapter = options.nodeadapter, xenadapter = options.xenadapter, networkingadapter = options.networkingadapter, systemuseradapter = options.systemuseradapter, packageadapter = options.packageadapter).serve_forever()
+	except KeyboardInterrupt, SystemExit:
+		pass
+	except BaseException:
+		logger.exception("Internal Error")
+		return 1
+
+	return 0
+
+if __name__ == "__main__":
+	import sys
+	sys.exit(main())

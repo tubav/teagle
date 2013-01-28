@@ -1,0 +1,42 @@
+#!/usr/bin/python
+
+from optparse import OptionParser
+from ptm.restfrontend import RESTServer
+
+def main():
+	import logging
+	import sys
+	import ptm.restfrontend
+
+	logger = logging.getLogger("ptm")
+
+	parser = OptionParser()
+	parser.add_option("-x", "--prefix", dest="prefix", help="Set prefix for PTM", default="ptmtest")
+	parser.add_option("-p", "--port", type="int", dest="port", help="Set port for PTM")
+	parser.add_option("-r", "--ptmregistry", dest="registry_url", help = "Address of the PTMRegistry")
+	(options, args) = parser.parse_args()
+
+	console = logging.StreamHandler()
+	formatter = logging.Formatter('REST: %(levelname)s [%(funcName)s(%(filename)s:%(lineno)s] - %(message)s')
+	console.setFormatter(formatter)
+	console.setLevel(logging.DEBUG)
+	logger.setLevel(logging.DEBUG)
+	logger.addHandler(console)
+
+	logfile = logging.FileHandler("/var/log/ptmrestfrontend.log")
+	logfile.setFormatter(formatter)
+	logfile.setLevel(logging.DEBUG)
+	logger.addHandler(logfile)
+
+	if not options.port:
+		options.port = 8001
+
+	logger.debug("Starting")
+	r = RESTServer(("0.0.0.0", options.port), options.registry_url, options.prefix)
+	r.serve_forever()
+	return 0
+
+
+if __name__ == "__main__":
+	import sys
+	sys.exit(main())

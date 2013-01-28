@@ -1,0 +1,3 @@
+[submodule "sfa/wrapper"]
+	path = sfa/wrapper
+	url = git://git.onelab.eu/sfa.git

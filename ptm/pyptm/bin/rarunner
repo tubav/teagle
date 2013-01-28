@@ -1,0 +1,27 @@
+#! /bin/sh
+
+if test -z "$1"; then
+	echo "Please specify the RA to run (fully qualified class name)"
+	exit 1
+fi
+
+if test -z "$PTM_HOME"; then
+	PTM_HOME=`dirname $0`/..
+	export PTM_HOME=`readlink -f "$PTM_HOME"`
+	echo PTM_HOME is not set. Setting to $PTM_HOME
+fi
+
+RADIR="$PTM_HOME/ra"
+MODULEDIR="$PTM_HOME/lib"
+
+if test -z "$PYTHONPATH"; then
+	export PYTHONPATH="$MODULEDIR:$RADIR"
+else
+	export PYTHONPATH="$PYTHONPATH:$MODULEDIR:$RADIR"
+fi
+
+echo PYTHONPATH: $PYTHONPATH
+echo starting RA...
+
+PTM_HOME=$PTM_HOME/ra exec python "$MODULEDIR/ptm/RARunner.py" $@
+
