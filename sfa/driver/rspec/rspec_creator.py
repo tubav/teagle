@@ -46,11 +46,11 @@ class RspecCreator(AbstractRspecCreator):
 #			instances = self.repo.list_entities(ResourceInstance, resourceSpec = pnodespec)
 
 			ptms = [
-				self.repo.get_unique_entity(Ptm, commonName = "fokusptm"),
-				self.repo.get_unique_entity(Ptm, commonName = "upatrasptm")
+				self.repo.get_unique_entity(Ptm, commonName = "avptm"),
+				#self.repo.get_unique_entity(Ptm, commonName = "upatrasptm")
 				]
 			
-			allowed_resources = ["fokusopenims", "imscreateuseraccount", "imscoreaccess", "imsopensipsaccess", "imsmediaserveraccess", "imswebrtc2sipgw"]
+			allowed_resources = ["epcenabler", "fokusopenims", "imscreateuseraccount", "imscoreaccess", "imsopensipsaccess", "imsmediaserveraccess", "imswebrtc2sipgw"]
 			
 			pnodespec = namedtuple("pnodespec", ("ptmname", "resourceSpec"))
 			pnodespecs = []
@@ -84,10 +84,11 @@ class RspecCreator(AbstractRspecCreator):
 #					instances.append(j)
 			
 			nodes = [
-				{'component_manager_id': 'urn:publicid:IDN+raven+authority+cm',
-				 'component_id': 'urn:publicid:IDN+raven:raven+node+' + pnodespec.ptmname + './' + pnodespec.resourceSpec.commonName,
-				 'authority_id': 'urn:publicid:IDN+raven:raven+authority+sa',
-				 'tags': [{'tagname': 'settings', 'value': [{'tagname': p.commonName, 'value': p.defaultParamValue, 'description': p.description} for p in pnodespec.resourceSpec.configurationParameters.configParams]}]
+				{'component_manager_id': 'urn:publicid:IDN+fiteagle+authority+cm',
+				 #'component_id': 'urn:publicid:IDN+fiteagle:fiteagle+node+' + pnodespec.ptmname + './' + pnodespec.resourceSpec.commonName,
+				 'component_id': 'urn:publicid:IDN+fiteagle:fiteagle+node+' + pnodespec.ptmname + pnodespec.resourceSpec.commonName,
+				 'authority_id': 'urn:publicid:IDN+fiteagle:fiteagle+authority+sa',
+				 'tags': [{'tagname': 'fiteagle_settings', 'value': [{'tagname': p.commonName, 'value': p.defaultParamValue, 'description': p.description} for p in pnodespec.resourceSpec.configurationParameters.configParams]}]
 				 #'tags': [{'tagname': p.commonName, 'value': p.defaultParamValue} for p in pnode.resourceSpec.configurationParameters.configParams]
 				} for pnodespec in pnodespecs
 			]
@@ -117,9 +118,9 @@ class RspecCreator(AbstractRspecCreator):
 	
 				#add login information
 				nodes = [
-					{'component_manager_id': 'urn:publicid:IDN+raven+authority+cm',
-					 'component_id': 'urn:publicid:IDN+raven:raven+node+' + i.commonName,
-					 'authority_id': 'urn:publicid:IDN+raven:raven+authority+sa',
+					{'component_manager_id': 'urn:publicid:IDN+fiteagle+authority+cm',
+					 'component_id': 'urn:publicid:IDN+fiteagle:fiteagle+node+' + i.commonName,
+					 'authority_id': 'urn:publicid:IDN+fiteagle:fiteagle+authority+sa',
 					 'tags': [{'tagname': p.commonName, 'value': p.paramValue} for p in i.configurationData]
 					} for i in instances
 				]
