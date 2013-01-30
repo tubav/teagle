@@ -1,0 +1,32 @@
+td
+{
+	padding: 10px;
+}
+
+td.policyTree
+{
+	width: 300px;
+}
+
+td.policyLog
+{
+	background-color: #ffffff;
+}
+
+textarea
+{
+	width: 100%;
+	border: 1px black solid;
+	height: 100%;
+}
+
+textarea.policyLog
+{
+	background-color: #ffffff;
+	color: #0000cc;
+}
+
+input
+{
+	border: 1px black solid;
+}

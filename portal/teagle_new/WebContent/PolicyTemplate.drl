@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <package name="identity.scope.event"  
+	xmlns="http://drools.org/drools-5.0" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" 
+	xs:schemaLocation="http://drools.org/drools-5.0 drools.org/drools-5.0.xsd"> 
+<import name="de.tub.av.pe.eval.drools.PEInputRequest" /> 
+<import name="de.tub.av.pe.eval.drools.DrlActionsManager" /> 
+<import name="de.tub.av.pe.eval.drools.DrlAction" /> 
+<import name="de.tub.av.pe.eval.drools.Parameter" /> 
+<import name="de.tub.av.pe.eval.drools.Utils" /> 
+
+<rule name="r1">
+<rule-attribute name="dialect" value="mvel" />
+
+<lhs><pattern identifier="f" object-type="PEInputRequest" >
+</pattern>
+
+<pattern identifier="p" object-type="Parameter" >
+</pattern>
+
+<pattern identifier="actionMng" object-type="DrlActionsManager" >
+</pattern>
+
+</lhs><rhs>	DrlAction action = new DrlAction("doPrint");
+	action.addAttribute("message", "Print your message");
+	actionMng.execute(drools.getRule(), action)
+</rhs>
+</rule>
+</package>

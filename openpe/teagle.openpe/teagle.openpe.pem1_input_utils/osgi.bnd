@@ -1,0 +1,9 @@
+Bundle-SymbolicName:\
+  ${bundle.symbolicName}
+
+Bundle-Version:\
+  ${project.version}
+
+Export-Package:\
+  ${bundle.namespace}; version="${project.version}", \
+  oma.xml.*; version="${project.version}"

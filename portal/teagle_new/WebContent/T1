@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.fire-teagle.org/T1" xmlns:tns="http://www.fire-teagle.org/T1" elementFormDefault="qualified">
+
+    <element name="configuration">
+    	<complexType>
+    		<choice minOccurs="0" maxOccurs="unbounded">
+    			<element name="integer" type="tns:integer" nillable="true"/>
+    			<element name="string" type="tns:string" nillable="true"/>
+    			<element name="float" type="tns:float" nillable="true"/>
+    			<element name="boolean" type="tns:boolean" nillable="true"/>
+    			<element name="reference" type="tns:reference" nillable="true"/>
+    			<element name="array" type="tns:array" nillable="true"/>
+    			<element name="dict" type="tns:dict" nillable="true"/>
+    		</choice>
+    	</complexType>
+    </element>
+
+    <complexType name="integer">
+		<simpleContent>
+			<extension base="integer">
+				<attribute name="name"/>
+			</extension>
+		</simpleContent>
+    </complexType>
+    
+    <complexType name="string">
+		<simpleContent>
+			<extension base="string">
+				<attribute name="name"/>
+			</extension>
+		</simpleContent>
+    </complexType>
+    
+    <simpleType name="referenceValueType">
+    	<restriction base="string">
+    		<minLength value="1" />
+    	</restriction>
+    </simpleType>
+    
+    <complexType name="reference">
+		<simpleContent>
+			<extension base="tns:referenceValueType">
+				<attribute name="name"/>
+			</extension>
+		</simpleContent>
+    </complexType>
+    
+    <complexType name="float">
+		<simpleContent>
+			<extension base="float">
+				<attribute name="name"/>
+			</extension>
+		</simpleContent>
+    </complexType>
+    
+    <complexType name="boolean">
+		<simpleContent>
+			<extension base="boolean">
+				<attribute name="name"/>
+			</extension>
+		</simpleContent>
+    </complexType>
+    
+    <complexType name="arrayValueType">
+   		<choice minOccurs="0" maxOccurs="unbounded">
+   			<element name="integer" type="integer" nillable="true"/>
+   			<element name="string" type="string" nillable="true"/>
+   			<element name="float" type="float" nillable="true"/>
+   			<element name="boolean" type="boolean" nillable="true"/>
+   			<element name="reference" type="tns:referenceValueType" nillable="true"/>
+   		</choice>
+    </complexType>
+    
+    <complexType name="array">
+    	<complexContent>
+    		<extension base="tns:arrayValueType">
+				<attribute name="name"/>
+			</extension>
+    	</complexContent>
+    </complexType>
+    
+    <complexType name="dictValueType">
+   		<choice minOccurs="0" maxOccurs="unbounded">
+   			<element name="integer" type="tns:integer" nillable="true"/>
+   			<element name="string" type="tns:string" nillable="true"/>
+   			<element name="float" type="tns:float" nillable="true"/>
+   			<element name="boolean" type="tns:boolean" nillable="true"/>
+   			<element name="reference" type="tns:reference" nillable="true"/>
+   		</choice>
+    </complexType>
+    
+    <complexType name="dict">
+        <complexContent>
+    		<extension base="tns:dictValueType">
+				<attribute name="name"/>
+			</extension>
+    	</complexContent>
+    </complexType>
+
+</schema>

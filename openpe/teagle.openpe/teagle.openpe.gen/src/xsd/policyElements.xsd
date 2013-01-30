@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://gen/openpe/elements/policy"
+	xmlns:pe="http://gen/openpe/elements/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:element name="polElements">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element name="events" type="pe:events" />
+				<xs:element name="policyTypes" type="pe:policyTypes"/>
+				<xs:element name="outputOverviews" type="pe:outputOverviews"/>				
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="events">
+		<xs:sequence>
+			<xs:element name="event" type="xs:string" maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="policyTypes">
+		<xs:sequence>
+			<xs:element name="policyType" type="xs:string" maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="outputOverviews">
+		<xs:sequence>
+			<xs:element name="outputOverview" type="pe:outputOverview" maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="outputOverview">
+		<xs:sequence>
+			<xs:element name="decision" type="xs:string" />			
+			<xs:element name="originator" type="xs:string" />
+			<xs:element name="originatortype" type="xs:string" />						
+			<xs:element name="target" type="xs:string" />
+			<xs:element name="targettype" type="xs:string" />
+			<xs:element name="event" type="xs:string" />
+			<xs:element name="time" type="xs:string" />	
+			<xs:element name="id" type="xs:long" />						
+			<xs:element name="evaluationOutput" type="pe:evaluationOutput" maxOccurs="unbounded"/>									
+		</xs:sequence>
+	</xs:complexType>
+
+
+	<xs:complexType name="evaluationOutput">
+		<xs:sequence>
+			<xs:element name="policyName" type="xs:string" />			
+			<xs:element name="reason" type="xs:string"/>
+			<xs:element name="ruleEvaluationOutput" type="pe:ruleEvaluationOutput" maxOccurs="unbounded"/>			
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ruleEvaluationOutput">
+		<xs:sequence>
+			<xs:element name="ruleId" type="xs:string"/>			
+			<xs:element name="reason" type="xs:string"/>			
+		</xs:sequence>
+	</xs:complexType>
+
+
+</xs:schema>

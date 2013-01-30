@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/de/fhg/fokus/ngni/openpe/pem1
+END
+PolicyEvaluationFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/de/fhg/fokus/ngni/openpe/pem1/PolicyEvaluationFactory.java
+END
+EnforcementConstants.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/de/fhg/fokus/ngni/openpe/pem1/EnforcementConstants.java
+END
+EvaluationHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/de/fhg/fokus/ngni/openpe/pem1/EvaluationHandler.java
+END
+PolicyEnforcementActionsExecutor.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/de/fhg/fokus/ngni/openpe/pem1/PolicyEnforcementActionsExecutor.java
+END
+PolicyEvaluation.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/de/fhg/fokus/ngni/openpe/pem1/PolicyEvaluation.java
+END
+PolicyEvaluationTransformation.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/de/fhg/fokus/ngni/openpe/pem1/PolicyEvaluationTransformation.java
+END

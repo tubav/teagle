@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/cc/ngni/openpe/!svn/ver/493/teagle.openpe.editor/src/main/java/de/tu/av/teagle/openpe/editor
+END
+EditorDataItem.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cc/ngni/openpe/!svn/ver/493/teagle.openpe.editor/src/main/java/de/tu/av/teagle/openpe/editor/EditorDataItem.java
+END
+ItemHtmlElementEnum.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/cc/ngni/openpe/!svn/ver/493/teagle.openpe.editor/src/main/java/de/tu/av/teagle/openpe/editor/ItemHtmlElementEnum.java
+END
+DuplicateValueException.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/cc/ngni/openpe/!svn/ver/493/teagle.openpe.editor/src/main/java/de/tu/av/teagle/openpe/editor/DuplicateValueException.java
+END
+ValidationException.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/cc/ngni/openpe/!svn/ver/493/teagle.openpe.editor/src/main/java/de/tu/av/teagle/openpe/editor/ValidationException.java
+END
+PEEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cc/ngni/openpe/!svn/ver/493/teagle.openpe.editor/src/main/java/de/tu/av/teagle/openpe/editor/PEEditor.java
+END
+JSONMethods.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cc/ngni/openpe/!svn/ver/493/teagle.openpe.editor/src/main/java/de/tu/av/teagle/openpe/editor/JSONMethods.java
+END
+PEEditorImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/cc/ngni/openpe/!svn/ver/493/teagle.openpe.editor/src/main/java/de/tu/av/teagle/openpe/editor/PEEditorImpl.java
+END
+PoliciesEditor.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/cc/ngni/openpe/!svn/ver/493/teagle.openpe.editor/src/main/java/de/tu/av/teagle/openpe/editor/PoliciesEditor.java
+END

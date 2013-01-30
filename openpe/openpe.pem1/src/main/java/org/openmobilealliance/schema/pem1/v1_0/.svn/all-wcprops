@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cc/ngni/openpe/!svn/ver/502/openpe.pem1/src/main/java/org/openmobilealliance/schema/pem1/v1_0
+END
+TransientErrorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/schema/pem1/v1_0/TransientErrorException.java
+END
+InformationalException.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/schema/pem1/v1_0/InformationalException.java
+END
+PermanentErrorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/schema/pem1/v1_0/PermanentErrorException.java
+END
+PolicyEngineService.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/cc/ngni/openpe/!svn/ver/502/openpe.pem1/src/main/java/org/openmobilealliance/schema/pem1/v1_0/PolicyEngineService.java
+END
+ProtocolErrorException.java
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/schema/pem1/v1_0/ProtocolErrorException.java
+END
+PolicyEnginePortType.java
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/cc/ngni/openpe/!svn/ver/502/openpe.pem1/src/main/java/org/openmobilealliance/schema/pem1/v1_0/PolicyEnginePortType.java
+END
+DenyPolicyResponseException.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/schema/pem1/v1_0/DenyPolicyResponseException.java
+END

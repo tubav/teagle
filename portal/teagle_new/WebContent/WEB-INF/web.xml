@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="2.4"
+	xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>teagle</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<listener>
+		<listener-class>de.fhg.fokus.teaglewebsite.TeagleServletContextListener</listener-class>
+	</listener>
+
+	<session-config>
+		<session-timeout>5</session-timeout>
+	</session-config>
+
+	<security-constraint>
+		<display-name>Teagle Security Constraint</display-name>
+		<web-resource-collection>
+			<web-resource-name>Members Area</web-resource-name>
+			<!-- Define the context-relative URL(s) to be protected 
+ 	  -->
+			<url-pattern>/members/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>authUser</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<display-name>Teagle Security Constraint</display-name>
+		<web-resource-collection>
+			<web-resource-name>Partners Area</web-resource-name>
+			<!-- Define the context-relative URL(s) to be protected 
+ 	  -->
+			<url-pattern>/partners/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>authPartner</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<display-name>Teagle Security Constraint</display-name>
+		<web-resource-collection>
+			<web-resource-name>Admin Area</web-resource-name>
+			<!-- Define the context-relative URL(s) to be protected 
+ 	  -->
+			<url-pattern>/admin/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>authAdmin</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<realm-name>Teagle Server Configuration Form-Based Authentication Area</realm-name>
+		<form-login-config>
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/error.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+
+	<security-role>
+		<description>
+ 	  The role that is required to log in to Teagle Members Area
+ 	</description>
+		<role-name>authUser</role-name>
+	</security-role>
+
+	<security-role>
+		<description>
+ 	  The role that is required to log in to Teagle Partners Area
+ 	</description>
+		<role-name>authPartner</role-name>
+	</security-role>
+
+	<security-role>
+		<description>
+ 	  The role that is required to log in to Teagle Admin Area
+ 	</description>
+		<role-name>authAdmin</role-name>
+	</security-role>
+
+	<servlet>
+		<servlet-name>feed</servlet-name>
+		<jsp-file>/feed.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>feed</servlet-name>
+		<url-pattern>/feed.rss</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>TracesControlServlet</servlet-name>
+		<servlet-class>de.fhg.fokus.tracingsupport.TracesControlServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>TracesControlServlet</servlet-name>
+		<url-pattern>/TccControl</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>StatusReportTransporter</servlet-name>
+		<servlet-class>de.fhg.fokus.tracingsupport.StatusReportTransporter</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+    	</description>
+		<display-name>TccConfigServlet</display-name>
+		<servlet-name>TccConfigServlet</servlet-name>
+		<servlet-class>de.fhg.fokus.tracingsupport.TccConfigServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+    	</description>
+		<display-name>TailTransporter</display-name>
+		<servlet-name>TailTransporter</servlet-name>
+		<servlet-class>de.fhg.fokus.tracingsupport.TailTransporter</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>StatusReportTransporter</servlet-name>
+		<url-pattern>/StatusReportTransporter</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TccConfigServlet</servlet-name>
+		<url-pattern>/TccConfigServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TailTransporter</servlet-name>
+		<url-pattern>/TailTransporter</url-pattern>
+	</servlet-mapping>
+</web-app>

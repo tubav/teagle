@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<meta name="description" content="Open PE Website"/>
+	<title>OpenPE</title>
+
+	<link rel="stylesheet" href="stylesheets/screen.css" type="text/css" media="screen" title="no title" charset="utf-8"/>
+	<!--[if gte IE 7]><link rel="stylesheet" href="stylesheets/ie7-screen.css" type="text/css" media="screen" title="no title" charset="utf-8"/><![endif]-->
+	<style type="text/css" media="screen">
+
+		/* new colors for xposer - greenish rgb(0,204,0)*/
+		.navi, .navi > ul > li a:hover, .navi > ul > li.active > a:hover, .navi > ul > li.active > a, .content .button:hover {
+			background-color: rgb(204,245,204); /*20% */
+			/*background-color: rgb(220, 230, 140);*/
+		}
+		.navi > ul > li a, .content .button {
+			background-color: rgb(153, 235, 153); /* 40% */
+		}
+		.main a:hover {
+			/*color: rgb(200, 230, 30);*/
+			color: rgb(0,204,0);			
+			border-bottom: 1px solid rgb(0,0,0);
+		}
+		.content h1, .content h2, .content h3, .content h4 {
+			/*color: rgb(0,204,0);*/
+			color: #736F6E;
+		}
+
+		/* custom logo */
+		.app_logo {
+			display: block;
+			margin: 3.5em 1.5em 0 0;
+		}
+		.app_logo img {
+			width: 187px;
+		}
+
+		/*  location && size of clientlogo */
+		.logo_client img {
+			right: 130px;
+			bottom: 12px;
+			width: 82px;
+		}
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="app">
+		
+		<div class="navi">
+
+			<a class="app_logo" href="#" title="Home">
+				<img src="images/logo_opensoatelco-xposer.png" alt="OpenSOATelco XPOSER"/>
+			</a>
+
+			<ul>
+				<li class="active">
+					<a href="#" title="Open PE - Policy Evaluation Engine">OpenPE</a>
+				</li>
+			    <li>
+					<a href="configuration.jsp?configuration=Open%20Policy%20Engine" title="Configuration">Configuration</a>
+				</li>
+				<li>
+					<a href="loglist.jsp" title="Log Overview">Log Overview</a>
+				</li>
+				<li>
+					<a href="editor/policyEditor.jsp" title="Editor">Policy Repository</a>
+				</li>					
+			</ul>
+		</div>
+		
+		<div class="main">
+			
+			<div class="breadcrumb">
+				<a href="index.html" title="Home">Home</a> > <abbr title="Open Policy Engine">Open PE</abbr>
+			</div>
+ 			
+ 			<div class="content">				
+
+				<h1>Open Policy Engine</h1>
+				<h3> Open Mobile Alliance Service Environment (OSE) compliant Policy Enforcer </h3>				
+				
+				<br/>	
+				<p>
+					The <i>Open Policy Engine(OpenPE)</i> has been developed as a consequence of the increased necessity of the telcom world for a 
+					system that provides a cost effectively and scalable management of the current resources and the future ones. 
+					It has been designed as a policy based service broker for architectures based on the nowadays SOA systems requirements, thus 
+					using the mechanism provided by the policy usage personalised services can be provided to end users and new services can be build
+					upon the existing ones or the ones provided by third party companies.					    
+				</p>
+				<p>The architecture of OpenPE can be depicted in the following figure:<br/><br/>
+					<center><img src="images/openpe_architecture_small.png" alt="OpenPE Architecture"/></center>				
+				</p>
+			</div>
+		</div>
+
+		<div class="opt">
+		</div>
+	
+	</div>
+
+	<div class="corp">
+		<a class="logo_client" href="http://www.fokus.fraunhofer.de/de/ngni/" title="Homepage NGNI">
+			<img src="images/logo_NGNI.png" alt="NGNI Logo"/>
+		</a>
+
+		<a class="logo_fhg" href="http://fokus.fraunhofer.de" title="Homepage Fraunhofer FOCUS">
+			<img src="images/logo_focus.png" alt="Fraunhofer FOCUS"/>
+		</a>
+
+		<div class="corp-bg-l"><img src="images/bg_corp-l.png" alt=""/></div>
+		<div class="corp-bg-r"><img src="images/bg_corp-r.png" alt=""/></div>
+	</div>
+
+	
+</body>
+</html>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/faults
+END
+DenyPolicyResponseExceptionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/faults/DenyPolicyResponseExceptionType.java
+END
+ServiceExceptionType.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/faults/ServiceExceptionType.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/faults/package-info.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/faults/ObjectFactory.java
+END

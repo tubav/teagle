@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:oma:xml:fokus:pem1-output-template"
+           targetNamespace="urn:oma:xml:fokus:pem1-output-template">
+
+  <xs:include schemaLocation="PEM_1_GenericOutputTemplateData-V1_0.xsd" />
+
+  <xs:complexType name="FOKUSOutputTemplateType">
+    <xs:complexContent>
+      <xs:extension base="outputTemplateType" >
+        <xs:sequence>
+        	<xs:element name="enforcementData" type="enforcementData" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="optional"/>        
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+	<xs:complexType name="enforcementData">
+		<xs:sequence>
+			<xs:element name="enforcementAction" type="enforcementAction" minOccurs="0" maxOccurs="unbounded"/>	
+		</xs:sequence>	
+	</xs:complexType>	
+	
+	<xs:complexType name="enforcementAction">
+		<xs:choice minOccurs="0" >
+			<xs:element name="enforcementActionOperation" type="enforcementActionOperation" maxOccurs="unbounded"/>	
+			<xs:element name="enforcementActionDescription" type="xs:string" maxOccurs="1"/>	
+		</xs:choice>
+        <xs:attribute name="id" type="xs:int" use="required"/>        			
+	</xs:complexType>	
+
+	<xs:complexType name="enforcementActionOperation">
+		<xs:sequence>
+			<xs:element name="enforcementActionOperationParameters" type="xs:string" maxOccurs="unbounded"/>	
+		</xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>        			
+	</xs:complexType>	
+
+
+
+</xs:schema>

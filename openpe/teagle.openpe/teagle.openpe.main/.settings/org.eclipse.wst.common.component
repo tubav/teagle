@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="teagle.openpe.main">
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.common/teagle.openpe.common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.common_impl/teagle.openpe.common_impl">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.configuration/teagle.openpe.configuration">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.pem1_processing/teagle.openpe.pem1_processing">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.pem1_input_utils/teagle.openpe.pem1_input_utils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.pem1_output_utils/teagle.openpe.pem1_output_utils">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.policies_evaluation.drools/teagle.openpe.policies_evaluation.drools">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.policy_model.drools/teagle.openpe.policy_model.drools">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.action.drl.DenyRequest/teagle.openpe.action.drl.DenyRequest">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.action.drl.DoPrint/teagle.openpe.action.drl.DoPrint">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.db_mysql.drools/teagle.openpe.db_mysql.drools">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.editor.drools/teagle.openpe.editor.drools">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.soap_interface/teagle.openpe.soap_interface">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.xcapserver/teagle.openpe.xcapserver">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.gen/teagle.openpe.gen">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/teagle.openpe.identitiesrepo_tssg/teagle.openpe.identitiesrepo_tssg">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/model/model">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module deploy-path="/WEB-INF/lib" handle="module:/resource/tssgrepoclient/tssgrepoclient">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="context-root" value="teagle.openpe.main"/>
+        <property name="java-output-path" value="/teagle.openpe.main/target/classes"/>
+    </wb-module>
+</project-modules>

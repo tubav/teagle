@@ -1,0 +1,19 @@
+package bob.originator.testevent
+
+import  de.fhg.fokus.ngni.broker.eval.drools.PEInputRequest
+import  de.fhg.fokus.ngni.broker.eval.drools.DrlActionsManager
+import de.fhg.fokus.ngni.broker.eval.drools.DrlAction
+
+
+rule "r2"
+    dialect "mvel"
+    salience 100
+	when
+		f : PEInputRequest( originatorIdentity == "Bob", originatorIdentityType == "user", event=="testEvent")
+		actionMng: DrlActionsManager()
+
+	then
+	DrlAction action = new DrlAction("denyRequest");
+	action.addAttribute("message", "Because of the user")
+	actionMng.execute(drools.getRule(), action)
+end

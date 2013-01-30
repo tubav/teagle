@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- November 21, 2007 -->
+
+
+<wsdl:definitions name="PEM1_faults"
+ 	targetNamespace="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/faults"
+ 	xmlns:tns="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/faults" 
+ 	xmlns:typens="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/faults"  
+ 	xmlns="http://schemas.xmlsoap.org/wsdl/"
+ 	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+ 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+ 	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+ 	xmlns:PEM1_faults_xsd="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/faults_xsd/">
+
+	<wsdl:types>
+		<xsd:schema  elementFormDefault="qualified" targetNamespace="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/faults">
+			<xsd:element name="serviceException" type="typens:serviceException_type"/>		
+			<xsd:complexType name="serviceException_type">    
+	   			<xsd:sequence>
+	   				<xsd:element name="statusCode" type="xsd:unsignedShort" minOccurs="1" maxOccurs="1"/>
+            		<xsd:element name="statusText" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+            		<xsd:element name="variables" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+		  <xsd:element name="denyPolicyResponseException" type="typens:denyPolicyResponseException_type"/>	
+          <xsd:complexType name="denyPolicyResponseException_type">  
+             <xsd:sequence>
+                   <xsd:element name="statusCode" type="xsd:unsignedShort" minOccurs="1" maxOccurs="1"/>
+                   <xsd:element name="statusText" type="xsd:string" minOccurs="0" maxOccurs="1"/> 
+                   <xsd:element name="policyData" type="xsd:anyType" minOccurs="0" maxOccurs="1"/>
+              </xsd:sequence>
+          </xsd:complexType>
+
+   		</xsd:schema>
+    </wsdl:types>
+
+   
+    <wsdl:message name="informationalException">    
+        <wsdl:part name="informationalException" element="typens:serviceException"/>
+    </wsdl:message>
+
+    <wsdl:message name="protocolErrorException">    
+        <wsdl:part name="protocolErrorException" element="typens:serviceException"/>
+    </wsdl:message>
+    
+    <wsdl:message name="transientErrorException">    
+        <wsdl:part name="transientErrorException" element="typens:serviceException"/>
+    </wsdl:message>
+
+    <wsdl:message name="permanentErrorException">    
+        <wsdl:part name="permanentErrorException" element="typens:serviceException"/>
+    </wsdl:message>
+
+    <wsdl:message name="denyPolicyResponseException">    
+        <wsdl:part name="denyPolicyResponseException" element="typens:denyPolicyResponseException"/>
+    </wsdl:message>
+</wsdl:definitions>

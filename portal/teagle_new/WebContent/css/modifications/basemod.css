@@ -1,0 +1,123 @@
+/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** ######################################################################################################
+** 
+**  YAML Version: 2.5
+**  Dateiversion: 18.06.06  
+**  Datei       : basemod.css
+**  Funktion    : Basis-Modifikation f�r das Layout des YAML-Tutorials
+**
+*/
+
+@media all
+{
+
+/* Formatierung der Seite */
+body { background: #D5D6D8; padding: 10px;	}
+
+/* Hier kann ein umlaufender Rand um die gesamte Webseite erzeugt werden */
+#page{ border: 1px #667 solid; background: #fff; }
+#page_margins {border: 1px #889 solid; min-width: 756px; max-width: 80em; margin:auto;}
+
+/* Formatierung der Kopfbereiches 1f1e2e  B0BCFA*/
+#header { position:relative; height: 168px; color: #fff; 
+	/*background: #B0BCFA url(../../img/header_bg8.gif) repeat-x top;*/
+	 }
+#header img {position:absolute; top: 0px; left: 0px; font-size:208%;}
+#banner { position:absolute; top:20px; right:0px; z-index:10; }
+#banner img { position:relative; top:0px; left:0px; font-size:100%; }
+#topnav { top:100px; color: #664C8D;}
+a.skip { color: #664C8D;}
+
+/* Formatierung der Fu�zeile */
+#footer { color:#888; background:#fff; margin: 1em; padding: 1em 0 0 0; border-top: 1px #ddd solid; line-height: 2em;}
+
+/* ######################################################################################################
+** ### Formatierung der Inhaltsspalten ##################################################################
+** ######################################################################################################
+*/
+#main { background: #fff ; padding-top: 0; } 
+
+/* linke Spalte */
+#col1 {	width: 22.5%; }	
+#col1_content { margin-left: 1em; margin-right: 1em; color: #444; background:inherit; }
+
+/* Rechte Spalte */
+#col2 {	width: 25%; }
+#col2_content {	margin-left: 1em; margin-right: 1em; }
+
+/* Mittlere Spalte */
+#col3
+{
+  	margin-left: 22.5%; 
+   	margin-right: 25%; 
+	border-left: 0px dotted #ddd;
+	border-right: 0px dotted #ddd;
+}
+
+#col3_content { margin-left: 1em; margin-right: 1em; }
+/*#col3_content  table td { padding:2px;}*/
+
+/* ######################################################################################################
+** ### Formatierung des Teasers der Startseite ##########################################################
+** ######################################################################################################
+*/
+
+#teaser { 
+	margin:0; 
+	padding:0; 
+	background: #F4F4F4; 
+	color: #765; 
+        border-bottom:1px solid #AAA;
+}
+
+#teaser div {float:left; width: auto; margin-right: 1em; }
+#teaser .block1 {padding:0.5em 0 0.4em 1em; font-size: 0.82em; }
+#teaser .block1 a {color:#334;}
+#teaser .block1 a:hover {background:transparent;}
+#teaser .block3 {width: 45%; padding-top:0.5em; font-size: 0.82em; }
+#teaser .langMenu {float:right; padding-top:0.2em; margin-right:0;}
+#teaser .selectFontSize {float:right; padding-top:0.4em; padding-right:1em;}
+#teaser .selectFontSize a {color:#334;}
+#teaser .selectFontSize a:hover {background:transparent;}
+#teaser .aktDatum {float:right; font-size: 0.82em; padding-top:0.5em; padding-right:1em;}
+
+#teaser .block3 .title {
+	font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif; 
+	display:block;
+	font-size: 1.2em; 
+	font-weight:bold; 
+	color: #336699;  
+	background:inherit;  
+	margin: 0 0 0.5em 0; 
+}
+
+div.tx-indexedsearch-searchbox table.search_input_table td {
+ padding: 2px;
+
+}
+
+a.mail {
+white-space: nowrap;
+}
+
+#dhtmltooltip{
+position: absolute;
+width: 200px;
+border: 1px solid black;
+padding: 2px;
+background-color: #f8f8f8;
+visibility: hidden;
+z-index: 100;
+}
+
+span.tooltipspan{
+	background-color:#f8f8f8;
+	cursor:help;
+}
+
+span.tooltipspan2{
+	cursor:help;
+}
+	
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://gen/openpe/identifiers/policy"
+	xmlns:pi="http://gen/openpe/identifiers/policy" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<xs:element name="policiesIdentifiers">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="policyIdentifier" type="pi:policyIdentifier" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="policyIdentifier">
+		<xs:sequence>
+			<xs:element name="id" type="xs:string" minOccurs="0"/>			
+			<xs:element name="idType" type="xs:string" />			
+			<xs:element name="identity" type="xs:string"/>
+			<xs:element name="scope" type="xs:string" />
+			<xs:element name="event" type="xs:string" minOccurs="0" />
+			<xs:element name="priority" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>

@@ -1,0 +1,30 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>teagle.openpe</artifactId>
+		<groupId>de.tub.av.openpe</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<groupId>de.tub.av.openpe</groupId>
+	<artifactId>teagle.openpe.identitiesrepo_tssg</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>teagle.openpe.identitiesrepo_tssg</name>
+	<dependencies>
+		<dependency>
+			<groupId>de.tub.av.openpe</groupId>
+			<artifactId>teagle.openpe.common</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>de.fhg.fokus.ngni.teagle</groupId>
+			<artifactId>model</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>de.fhg.fokus.ngni.teagle</groupId>
+			<artifactId>tssgrepoclient</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+</project>

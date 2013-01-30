@@ -1,0 +1,13 @@
+package org.drools.examples2
+ 
+import drools.test.Fact;
+ 
+rule "Hello World"
+    dialect "mvel"
+	when
+		eval(true)
+	then
+	System.out.println( "Hello World, this will be always called" );
+		#$action.executeAction(drools.getRule(), "doPrint", "message", "Ce faci tu?")
+	
+end

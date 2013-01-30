@@ -1,0 +1,40 @@
+package org.drools.examples
+ 
+import drools.test.Fact;
+import drools.test.Parameter;
+import drools.test.EvaluationResult;
+ 
+ 
+rule "Hello World"
+    dialect "mvel"
+	when
+		f : Fact( originatorIdentity == "sip:alice@open-ims.org")
+		m: List() from f.parameters["message"]
+		v: String(this == "buhu1") from $m		
+	then
+	System.out.println( "TANANA It works "+ drools.getRule().getPackageName() +":"+drools.getRule().getName());
+	System.out.println( "BUHU "+ drools.getRule().getPackageName() +":"+drools.getRule().getName());
+	
+end
+
+/*regs care limiteaza accessul la anumite servicii */ 
+
+rule "limit the service"
+    dialect "mvel"
+    salience 100 
+	when
+		f : Fact(target not in ("ThirdPartyCallService", "MultimediaConference"))
+		evaluationResult : EvaluationResult(status == EvaluationResult.ALLOW)
+	then
+	System.out.println("Request is denied");
+	modify(evaluationResult) {status = EvaluationResult.DENY}
+end
+
+rule "on deny"
+    dialect "mvel"
+	when
+		evaluationResult : EvaluationResult(status == EvaluationResult.DENY)
+	then
+	System.out.println("TANANA Request is denied; send a big error message");
+end
+

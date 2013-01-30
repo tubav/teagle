@@ -1,0 +1,19 @@
+package alice.target.testevent
+
+import  de.fhg.fokus.ngni.broker.eval.drools.PEInputRequest
+import  de.fhg.fokus.ngni.broker.eval.drools.DrlActionsManager
+import de.fhg.fokus.ngni.broker.eval.drools.DrlAction
+import de.fhg.fokus.ngni.broker.eval.drools.Parameter
+
+
+rule "r1"
+    dialect "mvel"
+	when
+		f : PEInputRequest( targetIdentities contains "Alice", targetIdentityType == "user", event=="testEvent")
+		p : Parameter(name=="msg")			
+		actionMng: DrlActionsManager()
+	then
+	DrlAction action = new DrlAction("doPrint");
+	action.addAttribute("message", "Ce faci tu? "+ p.value);
+	actionMng.execute(drools.getRule(), action)
+end

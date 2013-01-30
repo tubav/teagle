@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite failures="0" time="0.107" errors="2" skipped="0" tests="2" name="drools.test.DroolsPolicyEvaluationTest">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64"/>
+    <property name="java.vm.version" value="19.1-b02"/>
+    <property name="java.vm.vendor" value="Sun Microsystems Inc."/>
+    <property name="java.vendor.url" value="http://java.sun.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="DE"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/net/u/sha/workspace/teagle.openpe/teagle.openpe.main"/>
+    <property name="java.runtime.version" value="1.6.0_24-b07"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
+    <property name="basedir" value="/net/u/sha/workspace/teagle.openpe/teagle.openpe.main"/>
+    <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="surefire.real.class.path" value="/tmp/surefirebooter7269602288757257586.jar"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="os.name" value="Linux"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64/server:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/amd64:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/../lib/amd64:/usr/lib64/xulrunner-addons:/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="surefire.test.class.path" value="/net/u/sha/workspace/teagle.openpe/teagle.openpe.main/target/test-classes:/net/u/sha/workspace/teagle.openpe/teagle.openpe.main/target/classes:/net/u/sha/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/net/u/sha/.m2/repository/com/sun/xml/ws/jaxws-rt/2.1.7/jaxws-rt-2.1.7.jar:/net/u/sha/.m2/repository/javax/xml/ws/jaxws-api/2.1/jaxws-api-2.1.jar:/net/u/sha/.m2/repository/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar:/net/u/sha/.m2/repository/javax/xml/stream/stax-api/1.0/stax-api-1.0.jar:/net/u/sha/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/net/u/sha/.m2/repository/javax/xml/soap/saaj-api/1.3/saaj-api-1.3.jar:/net/u/sha/.m2/repository/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/net/u/sha/.m2/repository/javax/jws/jsr181-api/1.0-MR1/jsr181-api-1.0-MR1.jar:/net/u/sha/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.11/jaxb-impl-2.1.11.jar:/net/u/sha/.m2/repository/com/sun/xml/messaging/saaj/saaj-impl/1.3.3/saaj-impl-1.3.3.jar:/net/u/sha/.m2/repository/com/sun/xml/stream/buffer/streambuffer/0.9/streambuffer-0.9.jar:/net/u/sha/.m2/repository/org/jvnet/staxex/stax-ex/1.2/stax-ex-1.2.jar:/net/u/sha/.m2/repository/junit/junit/4.8.2/junit-4.8.2.jar:/net/u/sha/.m2/repository/org/codehaus/woodstox/wstx-asl/3.2.3/wstx-asl-3.2.3.jar:/net/u/sha/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/net/u/sha/.m2/repository/com/sun/org/apache/xml/internal/resolver/20050927/resolver-20050927.jar:/net/u/sha/.m2/repository/org/jvnet/mimepull/1.3/mimepull-1.3.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.common/target/teagle.openpe.common-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/ch/qos/logback/logback-classic/0.9.17/logback-classic-0.9.17.jar:/net/u/sha/.m2/repository/ch/qos/logback/logback-core/0.9.17/logback-core-0.9.17.jar:/net/u/sha/.m2/repository/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.common_impl/target/teagle.openpe.common_impl-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.configuration/target/teagle.openpe.configuration-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.pem1_processing/target/teagle.openpe.pem1_processing-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.pem1_input_utils/target/teagle.openpe.pem1_input_utils-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.pem1_output_utils/target/teagle.openpe.pem1_output_utils-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.policies_evaluation.drools/target/teagle.openpe.policies_evaluation.drools-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.policy_model.drools/target/teagle.openpe.policy_model.drools-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/org/drools/drools-core/5.0.1/drools-core-5.0.1.jar:/net/u/sha/.m2/repository/org/mvel/mvel2/2.0.10/mvel2-2.0.10.jar:/net/u/sha/.m2/repository/org/drools/drools-api/5.0.1/drools-api-5.0.1.jar:/net/u/sha/.m2/repository/joda-time/joda-time/1.6/joda-time-1.6.jar:/net/u/sha/.m2/repository/org/drools/drools-compiler/5.0.1/drools-compiler-5.0.1.jar:/net/u/sha/.m2/repository/org/antlr/antlr-runtime/3.1.1/antlr-runtime-3.1.1.jar:/net/u/sha/.m2/repository/org/eclipse/jdt/core/3.4.2.v_883_R34x/core-3.4.2.v_883_R34x.jar:/net/u/sha/.m2/repository/janino/janino/2.5.15/janino-2.5.15.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.action.drl.DenyRequest/target/teagle.openpe.action.drl.DenyRequest-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.action.drl.DoPrint/target/teagle.openpe.action.drl.DoPrint-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.db_mysql.drools/target/teagle.openpe.db_mysql.drools-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.editor.drools/target/teagle.openpe.editor.drools-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/com/metaparadigm/json-rpc/1.0/json-rpc-1.0.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.soap_interface/target/teagle.openpe.soap_interface-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.xcapserver/target/teagle.openpe.xcapserver-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/net/u/sha/.m2/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar:/net/u/sha/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.gen/target/teagle.openpe.gen-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/mysql/mysql-connector-java/5.1.15/mysql-connector-java-5.1.15.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.identitiesrepo_tssg/target/teagle.openpe.identitiesrepo_tssg-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/de/fhg/fokus/ngni/teagle/model/0.0.1-SNAPSHOT/model-0.0.1-SNAPSHOT.jar:/net/u/sha/.m2/repository/org/eclipse/swt/3.5.1/swt-3.5.1-linux64.jar:/net/u/sha/.m2/repository/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar:/net/u/sha/.m2/repository/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar:/net/u/sha/.m2/repository/de/fhg/fokus/ngni/teagle/tssgrepoclient/0.0.1-SNAPSHOT/tssgrepoclient-0.0.1-SNAPSHOT.jar:/net/u/sha/.m2/repository/com/sun/jersey/jersey-client/1.1.5-ea-v20091019/jersey-client-1.1.5-ea-v20091019.jar:/net/u/sha/.m2/repository/com/sun/jersey/jersey-core/1.1.5-ea-v20091019/jersey-core-1.1.5-ea-v20091019.jar:/net/u/sha/.m2/repository/javax/ws/rs/jsr311-api/1.1-ea/jsr311-api-1.1-ea.jar:"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="50.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Server Compiler"/>
+    <property name="os.version" value="2.6.32-31-generic"/>
+    <property name="user.home" value="/net/u/sha"/>
+    <property name="user.timezone" value=""/>
+    <property name="java.awt.printerjob" value="sun.print.PSPrinterJob"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="1.6"/>
+    <property name="user.name" value="sha"/>
+    <property name="java.class.path" value="/net/u/sha/workspace/teagle.openpe/teagle.openpe.main/target/test-classes:/net/u/sha/workspace/teagle.openpe/teagle.openpe.main/target/classes:/net/u/sha/.m2/repository/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar:/net/u/sha/.m2/repository/com/sun/xml/ws/jaxws-rt/2.1.7/jaxws-rt-2.1.7.jar:/net/u/sha/.m2/repository/javax/xml/ws/jaxws-api/2.1/jaxws-api-2.1.jar:/net/u/sha/.m2/repository/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar:/net/u/sha/.m2/repository/javax/xml/stream/stax-api/1.0/stax-api-1.0.jar:/net/u/sha/.m2/repository/javax/activation/activation/1.1/activation-1.1.jar:/net/u/sha/.m2/repository/javax/xml/soap/saaj-api/1.3/saaj-api-1.3.jar:/net/u/sha/.m2/repository/javax/annotation/jsr250-api/1.0/jsr250-api-1.0.jar:/net/u/sha/.m2/repository/javax/jws/jsr181-api/1.0-MR1/jsr181-api-1.0-MR1.jar:/net/u/sha/.m2/repository/com/sun/xml/bind/jaxb-impl/2.1.11/jaxb-impl-2.1.11.jar:/net/u/sha/.m2/repository/com/sun/xml/messaging/saaj/saaj-impl/1.3.3/saaj-impl-1.3.3.jar:/net/u/sha/.m2/repository/com/sun/xml/stream/buffer/streambuffer/0.9/streambuffer-0.9.jar:/net/u/sha/.m2/repository/org/jvnet/staxex/stax-ex/1.2/stax-ex-1.2.jar:/net/u/sha/.m2/repository/junit/junit/4.8.2/junit-4.8.2.jar:/net/u/sha/.m2/repository/org/codehaus/woodstox/wstx-asl/3.2.3/wstx-asl-3.2.3.jar:/net/u/sha/.m2/repository/stax/stax-api/1.0.1/stax-api-1.0.1.jar:/net/u/sha/.m2/repository/com/sun/org/apache/xml/internal/resolver/20050927/resolver-20050927.jar:/net/u/sha/.m2/repository/org/jvnet/mimepull/1.3/mimepull-1.3.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.common/target/teagle.openpe.common-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/ch/qos/logback/logback-classic/0.9.17/logback-classic-0.9.17.jar:/net/u/sha/.m2/repository/ch/qos/logback/logback-core/0.9.17/logback-core-0.9.17.jar:/net/u/sha/.m2/repository/org/slf4j/slf4j-api/1.5.8/slf4j-api-1.5.8.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.common_impl/target/teagle.openpe.common_impl-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.configuration/target/teagle.openpe.configuration-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.pem1_processing/target/teagle.openpe.pem1_processing-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.pem1_input_utils/target/teagle.openpe.pem1_input_utils-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.pem1_output_utils/target/teagle.openpe.pem1_output_utils-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.policies_evaluation.drools/target/teagle.openpe.policies_evaluation.drools-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.policy_model.drools/target/teagle.openpe.policy_model.drools-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/org/drools/drools-core/5.0.1/drools-core-5.0.1.jar:/net/u/sha/.m2/repository/org/mvel/mvel2/2.0.10/mvel2-2.0.10.jar:/net/u/sha/.m2/repository/org/drools/drools-api/5.0.1/drools-api-5.0.1.jar:/net/u/sha/.m2/repository/joda-time/joda-time/1.6/joda-time-1.6.jar:/net/u/sha/.m2/repository/org/drools/drools-compiler/5.0.1/drools-compiler-5.0.1.jar:/net/u/sha/.m2/repository/org/antlr/antlr-runtime/3.1.1/antlr-runtime-3.1.1.jar:/net/u/sha/.m2/repository/org/eclipse/jdt/core/3.4.2.v_883_R34x/core-3.4.2.v_883_R34x.jar:/net/u/sha/.m2/repository/janino/janino/2.5.15/janino-2.5.15.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.action.drl.DenyRequest/target/teagle.openpe.action.drl.DenyRequest-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.action.drl.DoPrint/target/teagle.openpe.action.drl.DoPrint-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.db_mysql.drools/target/teagle.openpe.db_mysql.drools-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.editor.drools/target/teagle.openpe.editor.drools-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/com/metaparadigm/json-rpc/1.0/json-rpc-1.0.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.soap_interface/target/teagle.openpe.soap_interface-1.0-SNAPSHOT.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.xcapserver/target/teagle.openpe.xcapserver-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/commons-httpclient/commons-httpclient/3.1/commons-httpclient-3.1.jar:/net/u/sha/.m2/repository/commons-logging/commons-logging/1.0.4/commons-logging-1.0.4.jar:/net/u/sha/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.gen/target/teagle.openpe.gen-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/mysql/mysql-connector-java/5.1.15/mysql-connector-java-5.1.15.jar:/net/u/sha/workspace/teagle.openpe/teagle.openpe.identitiesrepo_tssg/target/teagle.openpe.identitiesrepo_tssg-1.0-SNAPSHOT.jar:/net/u/sha/.m2/repository/de/fhg/fokus/ngni/teagle/model/0.0.1-SNAPSHOT/model-0.0.1-SNAPSHOT.jar:/net/u/sha/.m2/repository/org/eclipse/swt/3.5.1/swt-3.5.1-linux64.jar:/net/u/sha/.m2/repository/com/thoughtworks/xstream/xstream/1.3.1/xstream-1.3.1.jar:/net/u/sha/.m2/repository/xpp3/xpp3_min/1.1.4c/xpp3_min-1.1.4c.jar:/net/u/sha/.m2/repository/de/fhg/fokus/ngni/teagle/tssgrepoclient/0.0.1-SNAPSHOT/tssgrepoclient-0.0.1-SNAPSHOT.jar:/net/u/sha/.m2/repository/com/sun/jersey/jersey-client/1.1.5-ea-v20091019/jersey-client-1.1.5-ea-v20091019.jar:/net/u/sha/.m2/repository/com/sun/jersey/jersey-core/1.1.5-ea-v20091019/jersey-core-1.1.5-ea-v20091019.jar:/net/u/sha/.m2/repository/javax/ws/rs/jsr311-api/1.1-ea/jsr311-api-1.1-ea.jar:"/>
+    <property name="java.vm.specification.version" value="1.0"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre"/>
+    <property name="java.specification.vendor" value="Sun Microsystems Inc."/>
+    <property name="user.language" value="de"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.6.0_24"/>
+    <property name="java.ext.dirs" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/ext:/usr/java/packages/lib/ext"/>
+    <property name="sun.boot.class.path" value="/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/resources.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/rt.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/jsse.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/jce.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/charsets.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/lib/modules/jdk.boot.jar:/usr/lib/jvm/java-6-sun-1.6.0.24/jre/classes"/>
+    <property name="java.vendor" value="Sun Microsystems Inc."/>
+    <property name="localRepository" value="/net/u/sha/.m2/repository"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://java.sun.com/cgi-bin/bugreport.cgi"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="gnome"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase time="0.006" classname="drools.test.DroolsPolicyEvaluationTest" name="add">
+    <error message="Unresolved compilation problems: 
+	The import de.tub.av.pe.editor.drools.impl.PEEditorImpl cannot be resolved
+	The import de.tub.av.pe.eval.drools.DrlPolicyEvaluationImpl cannot be resolved
+	DrlPolicyEvaluationImpl cannot be resolved to a type
+	PEEditorImpl cannot be resolved to a type
+" type="java.lang.Error">java.lang.Error: Unresolved compilation problems: 
+	The import de.tub.av.pe.editor.drools.impl.PEEditorImpl cannot be resolved
+	The import de.tub.av.pe.eval.drools.DrlPolicyEvaluationImpl cannot be resolved
+	DrlPolicyEvaluationImpl cannot be resolved to a type
+	PEEditorImpl cannot be resolved to a type
+
+	at drools.test.DroolsPolicyEvaluationTest.&lt;init&gt;(DroolsPolicyEvaluationTest.java:40)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:209)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:258)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:255)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:127)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:345)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1009)
+</error>
+  </testcase>
+  <testcase time="0" classname="drools.test.DroolsPolicyEvaluationTest" name="evaluate">
+    <error message="Unresolved compilation problems: 
+	The import de.tub.av.pe.editor.drools.impl.PEEditorImpl cannot be resolved
+	The import de.tub.av.pe.eval.drools.DrlPolicyEvaluationImpl cannot be resolved
+	DrlPolicyEvaluationImpl cannot be resolved to a type
+	PEEditorImpl cannot be resolved to a type
+" type="java.lang.Error">java.lang.Error: Unresolved compilation problems: 
+	The import de.tub.av.pe.editor.drools.impl.PEEditorImpl cannot be resolved
+	The import de.tub.av.pe.eval.drools.DrlPolicyEvaluationImpl cannot be resolved
+	DrlPolicyEvaluationImpl cannot be resolved to a type
+	PEEditorImpl cannot be resolved to a type
+
+	at drools.test.DroolsPolicyEvaluationTest.&lt;init&gt;(DroolsPolicyEvaluationTest.java:40)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.junit.runners.BlockJUnit4ClassRunner.createTest(BlockJUnit4ClassRunner.java:209)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.runReflectiveCall(BlockJUnit4ClassRunner.java:258)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:15)
+	at org.junit.runners.BlockJUnit4ClassRunner.methodBlock(BlockJUnit4ClassRunner.java:255)
+	at org.junit.runners.BlockJUnit4ClassRunner.runNotIgnored(BlockJUnit4ClassRunner.java:79)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:71)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:49)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:193)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:52)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:191)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:42)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:184)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:236)
+	at org.apache.maven.surefire.junit4.JUnit4TestSet.execute(JUnit4TestSet.java:62)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.executeTestSet(AbstractDirectoryTestSuite.java:140)
+	at org.apache.maven.surefire.suite.AbstractDirectoryTestSuite.execute(AbstractDirectoryTestSuite.java:127)
+	at org.apache.maven.surefire.Surefire.run(Surefire.java:177)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at org.apache.maven.surefire.booter.SurefireBooter.runSuitesInProcess(SurefireBooter.java:345)
+	at org.apache.maven.surefire.booter.SurefireBooter.main(SurefireBooter.java:1009)
+</error>
+  </testcase>
+</testsuite>

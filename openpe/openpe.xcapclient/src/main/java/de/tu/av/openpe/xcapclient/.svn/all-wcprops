@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/cc/ngni/openpe/!svn/ver/499/openpe.xcapclient/src/main/java/de/tu/av/openpe/xcapclient
+END
+PoliciesDBManagerWithXcap.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/cc/ngni/openpe/!svn/ver/499/openpe.xcapclient/src/main/java/de/tu/av/openpe/xcapclient/PoliciesDBManagerWithXcap.java
+END
+PolicyObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cc/ngni/openpe/!svn/ver/492/openpe.xcapclient/src/main/java/de/tu/av/openpe/xcapclient/PolicyObject.java
+END
+PoliciesDBManager.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/cc/ngni/openpe/!svn/ver/492/openpe.xcapclient/src/main/java/de/tu/av/openpe/xcapclient/PoliciesDBManager.java
+END
+PEM2XcapClient.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/cc/ngni/openpe/!svn/ver/492/openpe.xcapclient/src/main/java/de/tu/av/openpe/xcapclient/PEM2XcapClient.java
+END
+RepositoryException.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/cc/ngni/openpe/!svn/ver/492/openpe.xcapclient/src/main/java/de/tu/av/openpe/xcapclient/RepositoryException.java
+END

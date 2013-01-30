@@ -1,0 +1,17 @@
+syntax: glob
+*.class
+.metadata
+.*.swp
+*.zip
+.*.swo
+.svn
+META-INF/sun-jaxb.episode
+
+
+relre:.classpath
+relre:.settings
+relre:.project
+relre:target
+relre:/oma/
+relre:/gen/
+relre:/org/

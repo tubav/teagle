@@ -1,0 +1,10 @@
+Bundle-SymbolicName:\
+  ${bundle.symbolicName}
+
+Bundle-Version:\
+  ${pom.version}
+
+Export-Package:\
+  ${bundle.namespace}; version="${pom.version}", \
+  oma.xml.fokus*; version="${pom.version}"
+ 

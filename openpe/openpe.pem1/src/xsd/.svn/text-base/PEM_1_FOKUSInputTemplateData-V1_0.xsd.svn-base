@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="urn:oma:xml:fokus:pem1-input-template"
+           targetNamespace="urn:oma:xml:fokus:pem1-input-template">
+
+  <xs:include schemaLocation="PEM_1_GenericInputTemplateData-V1_0.xsd" />
+  
+  <xs:complexType name="FOKUSInputTemplateType">
+    <xs:complexContent>
+      <xs:extension base="inputTemplateType">
+        <xs:sequence>
+            <xs:element name = "requestMessage" type="xs:boolean" minOccurs="0"/>
+            <xs:element name = "policyIdentifiers" type="policyIdentifiers" minOccurs="0" maxOccurs="1"/>        
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="optional"/>        
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+	<xs:complexType name="policyIdentifiers">
+		<xs:sequence>
+			<xs:element name="originatorID" type="xs:anyURI" minOccurs="0" maxOccurs="1"/>	
+			<xs:element name="targetID" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded"/>	
+			<xs:element name="originatorApplicationID" type="xs:anyURI"/>
+			<xs:element name="targetApplicationID" type="xs:anyURI"/>	
+		</xs:sequence>	
+	</xs:complexType>			
+	
+
+		
+		
+	
+   
+
+
+</xs:schema>

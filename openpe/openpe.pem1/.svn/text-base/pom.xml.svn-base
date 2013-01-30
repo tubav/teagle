@@ -1,0 +1,121 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.fhg.fokus.ngni.openpe</groupId>
+  <artifactId>openpe.pem1</artifactId>
+  <name>OpenPE PEM1</name>
+  <version>0.0.6-SNAPSHOT</version>
+  
+  
+  <scm>
+		<connection>scm:svn:https://svnsrv.fokus.fraunhofer.de/svn/cc/ngni/openpe/PEEM/openpe.pem1/trunk</connection>
+		<developerConnection>scm:svn:https://svnsrv.fokus.fraunhofer.de/svn/cc/ngni/openpe/PEEM/openpe.pem1/trunk</developerConnection>
+		<url>https://svnsrv.fokus.fraunhofer.de/cc/ngni/openpe/</url>
+	</scm>
+  
+  	<distributionManagement>
+		<repository>
+			<id>quark.artifactory</id>
+			<name>Quark Artifactory</name>
+			<url>http://neelix.fokus.fraunhofer.de/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Snapshots</name>
+			<url>https://neelix.fokus.fraunhofer.de/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+  
+  <dependencies>
+  	<dependency>
+  		<groupId>org.slf4j</groupId>
+  		<artifactId>slf4j-api</artifactId>
+  		<version>1.5.6</version>
+  	</dependency>
+  	
+  	<!-- 
+  	The groupid de.fhg.fokus.ngni.broker can be changed to de.tub.av.openpe when the teagle.openpe is released (mvn). So far only the artifacts with 
+  	group de.fhg.fokus.ngni.broker are in nexus repository.  	
+  	 -->
+  	<dependency>
+  		<groupId>de.fhg.fokus.ngni.broker</groupId>
+  		<artifactId>broker.openpe.pem1_input_utils</artifactId>
+  		<version>1.0-SNAPSHOT</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.fhg.fokus.ngni.broker</groupId>
+  		<artifactId>broker.openpe.pem1_output_utils</artifactId>
+  		<version>1.0-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+  		<plugin>
+  			<groupId>org.apache.maven.plugins</groupId>
+  			<artifactId>maven-compiler-plugin</artifactId>
+  			<version>2.3.2</version>
+			<configuration>
+				<source>1.6</source>
+				<target>1.6</target>
+			</configuration>
+  		</plugin> 
+  		<!-- 
+  		<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>1.10</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<sourceDestDir>${project.basedir}/src/main/java</sourceDestDir>
+							<wsdlFiles>
+								<wsdlFile>OMA-SUP-WSDL-PEM_1_REQ-V1_0-20071121-D.wsdl</wsdlFile>
+							</wsdlFiles>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin> 
+			 -->
+<!--  
+		Add this when compiling for fire-teagle pem1 lib. It will generate the wsld stubs configured with this wsdl 
+		http://www.fire-teagle.org/wsdl/OMA-SUP-WSDL-PEM_1_REQ-V1_0-20071121-D.wsdl.-->
+		<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>1.10</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>wsimport</goal>
+						</goals>
+						<configuration>
+							<sourceDestDir>${project.basedir}/src/main/java</sourceDestDir>
+							<wsdlUrls>
+								<wsdlUrl>http://www.fire-teagle.org/wsdl/OMA-SUP-WSDL-PEM_1_REQ-V1_0-20071121-D.wsdl</wsdlUrl>
+							</wsdlUrls>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>				
+				<configuration>
+					<outputDirectory>
+						${project.build.directory}
+        			</outputDirectory>
+     				<excludeScope>provided</excludeScope>
+     				<includeScope>runtime</includeScope>
+				</configuration>
+			</plugin>		
+  	</plugins>  				
+	</build>
+	
+
+</project>

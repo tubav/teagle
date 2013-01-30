@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:ietf:params:xml:fokus:common-policy"
+	xmlns:cp-openpe="urn:ietf:params:xml:fokus:common-policy" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx rfc4745 extended -->
+
+	<!-- /ruleset -->
+	<xs:element name="ruleset">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="rule" type="cp-openpe:rule" minOccurs="0"
+					maxOccurs="unbounded" />
+			</xs:sequence>
+			<xs:attribute name="name" type="xs:anyURI" use="optional" />
+		</xs:complexType>
+	</xs:element>
+
+	<!-- /ruleset/rule -->
+	<xs:complexType name="rule">
+		<xs:sequence>
+			<xs:element name="conditions" type="cp-openpe:conditionsType"
+				minOccurs="0" />
+			<xs:element name="actions" type="cp-openpe:actionsType"
+				minOccurs="0" />
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:string" use="required" />
+		<!-- the folowing attributes are used for conflict resolution -->
+		<xs:attribute name="priority" type="xs:anyURI" use="optional" />
+		<xs:attribute name="override" type="xs:boolean" use="optional" />
+	</xs:complexType>
+
+	<!-- //rule/conditions -->
+	<xs:complexType name="conditionsType">
+		<xs:choice maxOccurs="unbounded">
+			<!-- to which originating identities the rule applies -->
+			<xs:element name="originatorIdentity" type="cp-openpe:identityType"
+				minOccurs="0" />
+			<!-- to which targeting identities the rule applies -->
+			<xs:element name="targetIdentity" type="cp-openpe:identityType"
+				minOccurs="0" />
+			<xs:element name="sphere" type="cp-openpe:booleanExpressionType"
+				minOccurs="0" />
+			<xs:element name="validity" type="cp-openpe:validityType"
+				minOccurs="0" />
+			<xs:element name="constraints" type="cp-openpe:constraintsType"
+				minOccurs="0" />
+		</xs:choice>
+	</xs:complexType>
+
+	<!-- //conditions/identity -->
+	<xs:complexType name="identityType">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="one" type="cp-openpe:one" />
+			<xs:element name="one_regx" type="cp-openpe:one" />
+			<xs:element name="many" type="cp-openpe:many" />
+		</xs:choice>
+	</xs:complexType>
+
+	<!-- //identity/one referes to one identity-->
+	<xs:complexType name="one">
+		<!-- the Person id -->
+		<xs:attribute name="id" type="xs:anyURI" use="required" />
+	</xs:complexType>
+
+	<!--
+		//identity/many referes to a set of identities (organization, role)
+	-->
+	<xs:complexType name="many">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="except" type="cp-openpe:except"
+				minOccurs="0" />
+			<xs:element name="except_regx" type="cp-openpe:except"
+				minOccurs="0" />
+		</xs:choice>
+		<xs:attribute name="profile" use="optional" type="xs:string" />
+		<xs:attribute name="domain" type="xs:anyURI" use="optional" />	
+	</xs:complexType>
+
+	<!--
+		//many/except defines to which identities the rule does not apply
+	-->
+	<xs:complexType name="except">
+		<xs:attribute name="id" type="xs:string" use="optional" />
+		<xs:attribute name="domain" type="xs:anyURI" use="optional" />
+		<xs:attribute name="profile" type="xs:anyURI" use="optional" />
+	</xs:complexType>
+
+	<!-- //conditions/validity of the rule-->
+	<xs:complexType name="validityType">
+		<xs:sequence minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="from" type="xs:dateTime" />
+			<xs:element name="until" type="xs:dateTime" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<!-- //conditions/constraints on input parameters -->
+	<xs:complexType name="constraintsType">
+		<xs:complexContent>
+			<xs:extension base="cp-openpe:booleanExpressionType">
+				<xs:choice minOccurs="0">
+					<xs:element name="eachday" type="cp-openpe:eachday" />
+					<xs:element name="day" type="cp-openpe:day" maxOccurs="unbounded" />
+				</xs:choice>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="booleanExpressionType">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="and" type="xs:string" />
+			<xs:element name="or" type="xs:string" />
+			<xs:element name="startDelimiter" type="xs:string" />
+			<xs:element name="endDelimiter" type="xs:string" />
+			<xs:element name="operator" type="cp-openpe:operatorType" />
+			<xs:element name="conditionalAction" type="cp-openpe:conditionalActionType" />
+		</xs:choice>
+	</xs:complexType>
+
+	<!-- //actions -->
+	<xs:complexType name="actionsType">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="action" type="cp-openpe:actionType" />
+			<xs:element name="if" type="cp-openpe:ifType" />
+		</xs:choice>
+	</xs:complexType>
+
+
+	<xs:complexType name="actionType">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="attribute" type="cp-openpe:parameterType" />
+			<xs:element name="parameter" type="cp-openpe:parameterType" />
+			<xs:element name="parameterWithChildren" type="cp-openpe:parameterWithChildrenType" />
+		</xs:choice>
+		<xs:attribute name="id" type="xs:anyURI" use="optional" />
+		<xs:attribute name="type" use="required" type="xs:string">	
+		</xs:attribute>
+	</xs:complexType>
+
+	<!--
+		conditional action should be evaluated as true or false depending on
+		requirements imposed on the returned values
+	-->
+	<xs:complexType name="conditionalActionType">
+		<xs:complexContent>
+			<xs:extension base="cp-openpe:actionType">
+				<xs:sequence>
+					<xs:element name="resultParamsRequirements" type="cp-openpe:booleanExpressionType" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:complexType name="ifType">
+		<xs:sequence>
+			<xs:element name="test" type="cp-openpe:booleanExpressionType"
+				minOccurs="0" />
+			<xs:element name="then" type="cp-openpe:actionsType"
+				minOccurs="0" />
+			<xs:element name="else" type="cp-openpe:actionsType"
+				minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="parameterType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" type="xs:string" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+
+	<xs:complexType name="parameterWithChildrenType">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="parameter" type="cp-openpe:parameterType" />
+			<xs:element name="parameterWithChildren" type="cp-openpe:parameterWithChildrenType" />
+		</xs:choice>
+		<xs:attribute name="name" type="xs:string" use="required" />
+	</xs:complexType>
+
+	<xs:complexType name="eachday">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="startTime" type="xs:time" />
+			<xs:element name="endTime" type="xs:time" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="day">
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="startTime" type="xs:time" />
+			<xs:element name="endTime" type="xs:time" />
+		</xs:sequence>
+		<xs:attribute name="date" type="xs:date" use="required" />
+	</xs:complexType>
+
+	<!-- comparing operator -->
+	<xs:complexType name="operatorType">
+		<xs:sequence>
+			<xs:element name="operand1" type="xs:string" />
+			<xs:element name="operand2" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+		<!-- name of the operator (egual, notequal, less, higher)-->
+		<xs:attribute name="name" type="xs:string" use="required" />
+		<!-- types (egual, notequal, less, higher)-->
+		<xs:attribute name="operandsType" type="xs:string" use="optional" />
+		<!-- regx/noregx-->
+		<xs:attribute name="match" use="optional" />
+	</xs:complexType>
+
+
+</xs:schema>

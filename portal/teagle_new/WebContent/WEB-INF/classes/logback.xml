@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+ <appender class="ch.qos.logback.core.ConsoleAppender" name="OpenPEConsoleAppender">
+   <layout class="ch.qos.logback.classic.PatternLayout">
+     <pattern>%d{HH:mm:ss},[OpenPE],%p,[%c:%line] - %m%n</pattern>
+   </layout>
+ </appender>
+ 
+  <appender name="FileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
+   <File>openpecfg/openpe.log</File>
+   <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+     <FileNamePattern>openpecfg/openpe_%d{yyyy-MM-dd}.log</FileNamePattern>
+     <MaxHistory>10</MaxHistory>
+   </rollingPolicy>
+   <layout class="ch.qos.logback.classic.PatternLayout">
+     <pattern>%d{HH:mm:ss},[OpenPE],%p,[%c:%line] - %m%n</pattern>
+   </layout>
+ </appender>
+ 
+ <logger additivity="false" name="de.tub.av">
+   <level value="debug"/>
+   <appender-ref ref="OpenPEConsoleAppender"/>
+ </logger> 
+</configuration>

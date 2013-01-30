@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cc/ngni/openpe/!svn/ver/500/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/local
+END
+EvaluatePolicyRequestType.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/local/EvaluatePolicyRequestType.java
+END
+package-info.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/local/package-info.java
+END
+EvaluatePolicyResponseType.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/cc/ngni/openpe/!svn/ver/491/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/local/EvaluatePolicyResponseType.java
+END
+ObjectFactory.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/cc/ngni/openpe/!svn/ver/500/openpe.pem1/src/main/java/org/openmobilealliance/wsdl/pem1/v1_0/local/ObjectFactory.java
+END

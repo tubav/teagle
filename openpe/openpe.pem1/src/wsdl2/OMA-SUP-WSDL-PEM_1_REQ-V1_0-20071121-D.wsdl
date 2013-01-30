@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!-- November 21, 2007 -->
+
+<definitions name="PEM1_service" 
+
+	targetNamespace="http://www.openmobilealliance.org/schema/PEM1/v1_0" 
+	xmlns:tns="http://www.openmobilealliance.org/schema/PEM1/v1_0" 
+	xmlns="http://schemas.xmlsoap.org/wsdl/" 
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+	xmlns:callable_policy="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/service" 
+	xmlns:callable_policy_xsd="http://www.openmobilealliance.org/schema/PEM1/v1_0" 
+	xmlns:callable_common_faults="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/faults" 
+	xmlns:callable_policy_local_xsd="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/local.xsd">
+
+        <import
+        	namespace="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/faults"
+        	location="OMA-SUP-WSDL-PEM_1_faults-V1_0-20071121-D.wsdl">
+        </import>
+
+        <types>
+        	<xsd:schema elementFormDefault="qualified"
+        		targetNamespace="http://www.openmobilealliance.org/wsdl/PEM1/v1_0/local.xsd">
+        		<xsd:element name="evaluatePolicy" type="callable_policy_local_xsd:evaluatePolicyRequest_type"/>
+        		<xsd:complexType name="evaluatePolicyRequest_type">
+        			<xsd:sequence>
+        				<xsd:element name="callbackUrl" type="xsd:string" minOccurs="0" maxOccurs="1" />
+        				<xsd:element name="timeStamp" type="xsd:dateTime" minOccurs="0" maxOccurs="1"/>
+        				<xsd:element name="policyData" type="xsd:string" minOccurs="0" maxOccurs="1" />
+        			</xsd:sequence>
+        		</xsd:complexType>
+
+				<xsd:element name="evaluatePolicyResponse" type="callable_policy_local_xsd:evaluatePolicyResponse_type"/>
+        		<xsd:complexType name="evaluatePolicyResponse_type">
+        			<xsd:sequence>
+        				<xsd:element name="correlator" type="xsd:string" minOccurs="0" maxOccurs="1" />
+        				<xsd:element name="statusCode" type="xsd:unsignedShort" minOccurs="0" maxOccurs="1" />
+        				<xsd:element name="statusText" type="xsd:string" minOccurs="0" maxOccurs="1" />
+        				<xsd:element name="policyData" type="xsd:string" minOccurs="0" maxOccurs="1" />
+        			</xsd:sequence>
+        		</xsd:complexType>
+        	</xsd:schema>
+        </types>
+
+        <message name="evaluatePolicyRequest">
+        	<part name="parameters" element="callable_policy_local_xsd:evaluatePolicy" />
+        </message>
+
+        <message name="evaluatePolicyResponse">
+        	<part name="result" element="callable_policy_local_xsd:evaluatePolicyResponse" />
+        </message>
+
+
+        <portType name="policyEnginePortType">
+        	<operation name="evaluatePolicy">
+        		<input message="tns:evaluatePolicyRequest" />
+        		<output message="tns:evaluatePolicyResponse" />
+        		<fault name="informationalException"
+        			message="callable_common_faults:informationalException" />
+        		<fault name="protocolErrorException"
+        			message="callable_common_faults:protocolErrorException" />
+        		<fault name="transientErrorException"
+        			message="callable_common_faults:transientErrorException" />
+        		<fault name="permanentErrorException"
+        			message="callable_common_faults:permanentErrorException" />
+        		<fault name="denyPolicyResponseException"
+        			message="callable_common_faults:denyPolicyResponseException" />
+        	</operation>
+        </portType>
+
+
+        <binding name="evaluateBinding"
+        	type="tns:policyEnginePortType">
+        	<soap:binding style="document"
+        		transport="http://schemas.xmlsoap.org/soap/http" />
+
+        	<operation name="evaluatePolicy">
+        		<soap:operation soapAction="" />
+        		<input>
+        			<soap:body use="literal" />
+        		</input>
+
+        		<output>
+        			<soap:body use="literal" />
+        		</output>
+
+        		<fault name="denyPolicyResponseException">
+        			<soap:fault name="denyPolicyResponseException"
+        				use="literal" />
+        		</fault>
+
+        		<fault name="informationalException">
+        			<soap:fault name="informationalException"
+        				use="literal" />
+        		</fault>
+        		<fault name="protocolErrorException">
+        			<soap:fault name="protocolErrorException"
+        				use="literal" />
+        		</fault>
+        		<fault name="transientErrorException">
+        			<soap:fault name="transientErrorException"
+        				use="literal" />
+        		</fault>
+        		<fault name="permanentErrorException">
+        			<soap:fault name="permanentErrorException"
+        				use="literal" />
+        		</fault>
+        	</operation>
+        </binding>
+        <service name="PolicyEngineService">
+			<port name="PolicyEnginePort" binding="tns:evaluateBinding">
+				<soap:address location="http://www.fire-teagle.org/openpe/services/PolicyEngineService"/>
+			</port>
+		</service>
+</definitions>

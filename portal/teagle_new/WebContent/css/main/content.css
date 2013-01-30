@@ -1,0 +1,619 @@
+/* ######################################################################################################
+** # "Yet Another Multicolum Layout" (c) by Dirk Jesse (http://www.yaml.de) #############################
+** # "TYPO3 Template für YAML" (c) by Dieter Bunkerd (http://yaml.t3net.de) #############################
+** ######################################################################################################
+** 
+**  YAML Version: 2.5
+**  Dateiversion: 18.06.06  
+**  Datei       : typo3.css
+**  Funktion    : Formatierung der Inhalte und TYPO3-spezifische Änderungen der content.css
+**
+*/
+
+@media all
+{
+/* ######################################################################################################
+** # Standard-Vorgaben ##################################################################################
+** ######################################################################################################
+** 
+
+
+
+/* ### Überschriften, Fließtexte ###################################################################### */
+
+body { color: #222; font-size: 83.33%; font-family: 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif; }
+
+h1,h2,h3,h4 { font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif; font-weight:normal;}
+h1,h2,h3,h4 { font-family: 'Lucida Grande', Verdana, Arial, Sans-Serif; display:block; font-weight:bold;}
+
+h1 {font-size: 1.1em; color: #669933;  background:inherit;  margin:0.4em 0 0.5em 0; border-bottom: 1px #ccc solid; padding-top: 1em;}
+h2 {font-size: 1.0em; color: #669933; background-color: #D4D4D4;   margin:0.2em 0 0.5em 0; padding: 0.3em; margin-top: 1em; }
+h3 {font-size: 1.0em; color: #669933; margin:0.4em 0 0.3em 0; padding-top: 1em;}
+h4 {font-size: 1.0em; color: #669933; margin:0.4em 0 0.3em 0; border-bottom: 1px #ccc solid; padding-top: 1em;}
+
+#teaser h1 { font-size: 1.2em; border: 0; }
+
+p,ul,dd,dt { line-height: 1.5em;}
+p { line-height: 1.5em; margin: 0 0 0em 0; }
+
+
+strong,b { font-weight: bold; }
+em,i { font-style:italic; }
+pre, code {	font-family: "Courier New", Courier, monospace; }
+address { font-style:normal; line-height: 1.5em; margin: 0 0 1em 0; }
+
+hr { 
+	color: #fff; 
+	background:transparent; 
+	margin: 0 0 0.5em 0; 
+	padding: 0 0 0.5em 0; 
+	border:0; 
+	border-bottom: 1px #eee solid; 
+}
+
+acronym, abbr {
+	border-bottom: 1px dashed #c00;
+	cursor: help;
+}
+
+/* ### Bildpositionierung ############################################################################ */
+
+img.float_left { float: left; margin-right: 1em; margin-bottom: 0.15em; border:0; }
+img.float_right { float: right; margin-left: 1em; margin-bottom: 0.15em; border:0; }
+img.center { text-align:center; background: #fff; padding: 4px; border:1px #ddd solid; }
+
+/* ### Auszeichnung lokaler und Externer Links ######################################################## */
+/* 1D60DB vorher 1e6289*/
+a, a em.file {color: #3333FF; text-decoration:none;}
+a:hover {background-color: #eef; text-decoration:underline;}
+
+#topnav a { color: #664C8D; background:transparent; text-decoration:none; }
+#topnav a:hover{ text-decoration:underline; background-color: transparent;}
+
+#footer a { color: #669; }
+#footer a:hover {background-color: #eef; }
+
+#main a[href^="http:"], #main a[href^="https:"]
+{
+	padding-left:0;
+	background-image:none;
+}
+
+#main a.imagelink {
+	padding-left: 0;
+	background: transparent;
+}
+/* ######################################################################################################
+** ### Formulare & Tabellen #############################################################################
+** ######################################################################################################
+*/
+
+table { border-collapse:collapse; margin-bottom: 0.5em; }
+
+form {overflow:hidden;}
+
+input, textarea {
+    width: auto;
+	font: 1em Verdana, Arial, Helvetica, Sans-Serif;
+	border: 1px #ccc solid;
+    background: #fafafa;
+	padding: 3px;
+	color: #777;
+}
+
+input[type=text]:focus, input[type=password]:focus, textarea:focus {
+	background: #f0f0f0;
+	color: #333;
+	border-color: #666;
+}
+
+
+/* +hier */
+
+#tx-newloginbox-pi1-user {
+	
+	width: 100px;
+
+
+}
+
+#tx-newloginbox-pi1-pass {
+
+	width: 100px;
+
+}
+
+/* ######################################################################################################
+** ### Spezielle Formatanweisungen des YAML-Standard-Layouts ############################################
+** ######################################################################################################
+*/
+
+/* ###  Textformatierungen ################################################################## */
+
+/* Beispieldateien */
+p.demo { background-color: #fee; border: 1px #fcc solid; padding: 6px; margin-bottom: 0.5em; }
+
+/* Navigation am Seitenende */
+p.navlink { background-color: #f4f8f4; border: 1px #aca dotted; padding: 6px; margin-bottom: 0.5em; }
+p.navlink a { color: #353;}
+p.navlink a:hover { font-weight: bold; background: transparent; }
+
+blockquote { 
+	color: #222; 
+	background: #f8f8f8; 	
+	border: 1px #ddd solid;
+	border-left: 8px #ddd solid;
+	padding: 1em 1em 0 1em;
+	margin: 0 0 1em 1em;
+}
+
+/* Ungeordnete Listen ohne Listenpunkt */ 
+ul.linklist { list-style-type: none; margin: 0 0 1em 0; }
+ul.linklist li { margin: 0 0 1em 0; }
+
+/* Auszeichnungen für Code, Dateien, Verzeichnisse */
+em.mono, em.file, em.directory {
+	font-family: "Courier New", Courier, monospace;
+	font-style: normal;
+}
+
+em.mono { 
+	padding:0 0.3em 0 0.3em;
+	background:#f0f0f4;
+	border: 1px #ccd solid;
+}
+
+em.file { 
+	padding:0 0 0 14px;
+	color: #008;
+	background: transparent url(../../img/icons/file.gif) no-repeat left;
+}
+
+em.directory { 
+	padding:0 0 0 15px;
+	color: #008;
+	background: transparent url(../../img/icons/dir.gif) no-repeat left;
+}
+
+pre, code {
+	display:block;
+	margin: 0 0 1em 1em;
+	padding: 0.5em;
+	color: #000; 
+	background: #f0f0f4;
+	border: 1px #ccd solid;
+	border-left: 8px #ccd solid;
+}
+
+code.css { 
+	background-image: url(../../img/bg_css.gif);
+    background-repeat: no-repeat;
+	background-position: top right;
+}
+
+code.xhtml { 
+	background-image: url(../../img/bg_xhtml.gif);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+code.typoscript { 
+	background-image: url(../../img/bg_ts.gif);
+	background-repeat: no-repeat;
+	background-position: top right;
+}
+
+/* ### Tabellen ################################################################## */
+
+table.bugs { margin-bottom: 1em; margin-top: 0.5em; width:100%; }
+table.bugs th { 
+	background: #fff; color: #222; 
+	padding: 0.5em; 
+	text-align: center; 
+	border-bottom: 1px #ccd solid; 
+	border-right: 1px #ccd solid;
+}
+
+table.bugs td {
+	background: #f0f0f4; color: #222; 
+	padding: 0.5em; 
+	text-align: center; 
+	border-bottom: 1px #ccd solid; 
+	border-right: 1px #ccd solid;
+}
+
+table.teagle{
+	border-collapse:separate;
+	border-spacing:3px;
+}
+
+table.teagle td{
+	padding:4px;
+}
+
+table.teagle th{
+	padding:4px;
+}
+	
+/* ### Download-Box ################################################################## */
+
+.bluebox {
+	color:#000;
+	background: #f0f0f4; padding: 2px; border: 1px #ccd solid;
+	text-align: center;
+	padding: 4px 0 4px 0;
+	margin-bottom: 1em;
+}
+
+.bluebox p { padding: 0px 8px 0 8px; }
+
+a.dl_link {
+	display: block;
+	padding: 0;
+	margin: 0.5em auto 0 auto;
+	background-image: none;
+}
+
+a.dl_link:hover { text-decoration: none; background-color: transparent; }
+
+
+}
+/*******************************************
+* Styles für Typo3 (RTE)
+********************************************/
+select  {
+ margin-left: 1em;
+ font: 1em Verdana, Arial, Helvetica, Sans-Serif;
+ border: 1px #ccc solid;
+ background: #fafafa;  
+ color: #777;
+}
+
+
+input, textarea {
+	margin-left: 1em;
+  width: auto;
+	font: 1em Verdana, Arial, Helvetica, Sans-Serif;
+	border: 1px #ccc solid;
+  background: #fafafa;
+	padding: 2px;
+	color: #777;
+}
+
+input[type=text]:focus, textarea:focus {
+	background: #f0f0f0;
+	color: #333;
+	border-color: #666;
+}
+img {
+	border: 0;
+}
+p.csc-linkToTop {
+	text-align: right;
+}
+span.mono { 
+	font-family: "Courier New", Courier, monospace;
+	font-style: normal;
+	padding:0 0.3em 0 0.3em;
+	background:#f0f0f4;
+	border: 1px #ccd solid;
+}
+span.file { 
+	font-family: "Courier New", Courier, monospace;
+	font-style: normal;
+	padding:0 0 0 14px;
+	color: #000088;
+	background: transparent url('../../img/icons/file.gif') no-repeat left;
+}
+
+span.directory { 
+	font-family: "Courier New", Courier, monospace;
+	font-style: normal;
+	padding:0 0 0 15px;
+	color: #000088;
+	background: transparent url('../../img/icons/dir.gif') no-repeat left;
+}
+p.smalltext {
+	font-size: 0.9em;
+}
+p.redbox { color:#000; background-color:#fee; border:1px #fcc solid; padding:6px; margin-bottom: 0.5em; }
+p.greenbox { background-color: #f4f8f4; border: 1px #aca dotted; padding: 6px; margin-bottom: 0.5em; }
+p.greenbox a { color: #353;}
+p.greenbox a:hover { background: transparent; }
+p.box {
+	display: block;
+	font-size: 1em;
+	color: #000;
+	padding: 0.5em;
+	background: #f0f0f4;
+	border-left: 8px #E0E7F5 solid;
+}
+p.code {
+	display: block;
+	margin: 0 0 1em 1em;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 1em;
+	padding: 0.5em;
+	color: #000; 
+	background: #f0f0f4;
+	border-left: 8px #E0E7F5 solid;
+}
+p.bluebox {
+	color:#000;
+	background: #f0f0f4; padding: 2px; border: 1px #ccd solid;
+	text-align: center;
+	padding: 4px 0 4px 0;
+	margin-bottom: 1em;
+}
+p.csc-form-label-req {
+	font-weight: bold;
+}
+.csc-caption {
+	font-size: 0.9em;
+	background-color: #E0E7F5; padding: 2px;
+}
+/* Typo3 Version 4 */
+dd.csc-textpic-caption {
+	font-style: italic;
+	font-size: 0.9em;
+	background-color: #E0E7F5; padding: 0;
+}
+/*******************************************
+* Styles für tt_news
+********************************************/
+.tx-ttnews-browsebox {
+	text-align:center;
+	padding:0;
+	margin:1.2em 0 1em 0;
+  padding:1px;
+  border:1px solid #ccd;
+  background:#f0f0f4;
+}
+.tx-ttnews-browsebox a, .tx-ttnews-browsebox strong {
+	padding: 0 0.4em 0.4em 0;
+	margin:0;
+	background:transparent;
+}
+
+/* LATEST Ansicht */
+.news-latest-item {
+	margin-bottom: 0em;
+}
+.news-latest-item h3 {
+	padding-top: 0;
+}
+.news-latest-item h3 a { text-decoration:underline; }
+.news-latest-item h3 a:hover { background:transparent; }
+.news-latest-item img {
+	padding-right: 1em;
+	padding-top: 0.5em;
+	float: left;
+}
+.news-morelink {
+margin-left:3px;
+}
+.news-latest-morelink {
+  padding:1px;
+  
+  border-bottom:1px solid #ccd;
+  /*background:#f0f0f4;*/
+  text-align:center;
+}
+
+/* LIST Ansicht */
+.news-list-item {
+	margin-bottom: 0em;
+}
+.news-list-item h3 {
+	padding-top: 0;
+}
+.news-list-item h3 a { text-decoration:underline; }
+.news-list-item h3 a:hover { background:transparent; }
+.news-list-item h3 span.news-list-date {
+	color: #aaa;
+	font-weight: normal;
+}
+.news-list-morelink {
+  padding:1px;
+  /*border-bottom:1px solid #ccd;*/
+  /*background:#f0f0f4;*/
+  text-align:center;
+  display:inline;
+}
+.news-list-morelink a { color: #669;}
+.news-list-morelink a:hover { background: transparent; }
+
+/* SINGLE Ansicht */
+.news-single-item h3 {
+	margin-bottom: 1em;
+	margin-top: 1em;
+	color: #000;
+	padding: 0.5em;
+	background: #f0f0f4;
+	border-left: 8px #E0E7F5 solid;
+}
+.news-single-img {
+	padding-right:15px;
+	float:left;
+}
+.news-single-img p {
+	padding:0;
+	margin:0;
+}
+.news-single-timedata {
+	color: #aaa;
+	margin-bottom: 1em;
+}
+.news-list-category {
+	color: #aaa;
+}
+.news-single-additional-info {
+}
+.news-single-additional-info dd {
+	margin-top: -1em;
+}
+.news-single-additional-info dt {
+	margin-bottom: 1.4em;
+	color: #aaa;
+}
+/*******************************************
+* Styles für Extension "tx_indexedsearch"
+********************************************/
+.tx-indexedsearch .tx-indexedsearch-searchbox INPUT.tx-indexedsearch-searchbox-button { width:100px; }
+.tx-indexedsearch .tx-indexedsearch-searchbox INPUT.tx-indexedsearch-searchbox-sword { width:150px; }
+.tx-indexedsearch .tx-indexedsearch-whatis P .tx-indexedsearch-sw { font-weight:bold; font-style:italic; }
+.tx-indexedsearch .tx-indexedsearch-whatis { margin-top:10px; margin-bottom:5px; }
+.tx-indexedsearch P.tx-indexedsearch-noresults { text-align:center; font-weight:bold; }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-title { background:#eeeeee; }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-title P { font-weight:bold; }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-title P.tx-indexedsearch-percent { font-weight:normal; }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-descr P { font-style:italic; }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-descr P .tx-indexedsearch-redMarkup { }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-info { background:#E0E7F5; }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead { margin-top:20px; margin-bottom:5px; }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead H2 { color:#006699; margin-top:0px; margin-bottom:0px; background:transparent; }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead TABLE { background:#cccccc; }
+.tx-indexedsearch .tx-indexedsearch-res .tx-indexedsearch-secHead TD { vertical-align:middle; }
+.tx-indexedsearch .tx-indexedsearch-res .noResume { color : #666666; }
+.tx-indexedsearch-sw, .csc-sword, .tx-indexedsearch-redMarkup {	font-family: monospace;	font-style: normal;	padding:0 0.3em 0 0.3em; background:#ffff88; border: 1px #ccd solid; }
+/*******************************************
+* Styles für Sprachenauswahl
+********************************************/
+div.langMenu {
+	padding: 0 0 0 0;
+}
+div.langMenu a:hover {
+	background: transparent;
+}
+div.langMenu img.flag {
+	margin-top: 4px;
+	padding-right: 7px;
+}
+div.langMenu img.arrow {
+}
+/*******************************************
+* Styles für Codebox Extension
+********************************************/
+.tx-jphcodesnippets-pi {
+	font-size: 0.9em;
+	font-family: "Courier New", Courier, monospace;
+	font-weight: normal;
+	border: 1px #ccd solid;
+}
+.tx-jphcodesnippets-pi .imp { font-weight: bold; color: red; }
+.tx-jphcodesnippets-pi .ln-xtra { background: #ffcccc; }
+.tx-jphcodesnippets-pi li { background: #f0f0f4; }
+.tx-jphcodesnippets-pi li.li2 { background: #ffffff; }
+.tx-jphcodesnippets-pi .kw1 { color: #b1b100; }
+.tx-jphcodesnippets-pi .kw2 { color: #000000; font-weight: bold;}
+.tx-jphcodesnippets-pi .kw3 { color: #000066;}
+.tx-jphcodesnippets-pi .co1 { color: #808080; font-style: italic; }
+.tx-jphcodesnippets-pi .co2 { color: #808080; font-style: italic; }
+.tx-jphcodesnippets-pi .coMULTI { color: #808080; font-style: italic; }
+.tx-jphcodesnippets-pi .es0 { color: #000099; font-weight: bold; }
+.tx-jphcodesnippets-pi .br0 { color: #00ff00; }
+.tx-jphcodesnippets-pi .st0 { color: #ff0000; }
+.tx-jphcodesnippets-pi .nu0 { color: #cc66cc; }
+.tx-jphcodesnippets-pi .me1 { color: #006600; }
+.tx-jphcodesnippets-pi .me2 { color: #006600; }
+.tx-jphcodesnippets-pi .re0 { color: #0000ff; }
+.tx-jphcodesnippets-pi .download { padding-left:1em; font-style:italic; font-family: 'Trebuchet MS', Verdana, Helvetica, Arial, sans-serif; }
+/*******************************************
+* Styles für Linklist
+********************************************/
+.tx_ablinklist_listView_links {
+}
+.tx_ablinklist_listView_link {
+	padding: 0 0 1em 0;
+	margin: 0 0 1em 0;
+	border-bottom: 1px solid #cccccc;
+}
+.tx-ablinklist-pi1-browsebox td {
+	padding-right: 1em;
+}
+.tx_ablinklist_viewRateLink {
+}
+/*******************************************
+* Styles barrierefreies Menü
+********************************************/
+@media screen, print {
+	#col1_content dfn, #col1_content .hidden {
+	position: absolute;
+	left: -1000em; 
+	width: 20em;
+	} }
+/*******************************************
+* Styles tx_dropdownsitemap
+********************************************/
+.tx-dropdownsitemap-pi1 A {
+	font-weight: bold;
+}
+.tx-dropdownsitemap-pi1 LI.open OL {
+	display: block;
+}
+.tx-dropdownsitemap-pi1 LI.closed OL {
+	display: none;
+}
+.tx-dropdownsitemap-pi1 LI.open UL {
+	display: block;
+}
+.tx-dropdownsitemap-pi1 LI.closed UL {
+	display: none;
+}
+.tx-dropdownsitemap-pi1 DIV {
+	border: solid 1px #ccd;
+	background: #F0F0F4;
+	padding: 2px;
+	margin-bottom: 5px;
+}
+.tx-dropdownsitemap-pi1 DIV.level_2 {
+	background: #FFFFFF;
+}
+.tx-dropdownsitemap-pi1 DIV.level_2 A {
+	font-weight: normal;
+}
+.tx-dropdownsitemap-pi1 DIV.level_3 {
+	background: #F0F0F4;
+}
+.tx-dropdownsitemap-pi1 DIV.level_4 {
+	background: #FFFFFF;
+}
+.tx-dropdownsitemap-pi1 DIV.level_5 {
+	background: #F0F0F4;
+}
+.tx-dropdownsitemap-pi1 DIV.expAll {
+	text-align: center;
+	border: solid 1px #ccd;
+	background: #F0F0F4;
+}
+.tx-dropdownsitemap-pi1 img {
+	margin-right:0.5em;
+}
+.tx-dropdownsitemap-pi1 a:hover {
+	background:transparent;
+}
+/*******************************************
+* TYPO3 Mailformular
+********************************************/
+.csc-mailform-field label {
+  color:#369;
+  display:block;
+  font-size:0.8em;
+  margin-top:1em;
+}
+.csc-mailform-radio label {
+  display:inline;
+  margin-left:0.3em;
+}
+.csc-mailform-radio legend {
+  display:none;
+}
+.csc-mailform-submit {
+  margin-top:1em;
+}
+/*******************************************
+* Ergänzung für Teagle
+********************************************/
+.hiddendiv {
+  display:none;
+}

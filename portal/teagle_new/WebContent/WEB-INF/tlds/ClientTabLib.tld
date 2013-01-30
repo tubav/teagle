@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib version="2.0" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd">
+    <tlib-version>1.0</tlib-version>
+    <short-name>client tag libs</short-name>
+    <uri>/WEB-INF/tlds/ClientTabLib</uri>
+    <!-- A validator verifies that the tags are used correctly at JSP
+         translation time. Validator entries look like this: 
+      <validator>
+          <validator-class>com.mycompany.TagLibValidator</validator-class>
+          <init-param>
+             <param-name>parameter</param-name>
+             <param-value>value</param-value>
+	  </init-param>
+      </validator>
+   -->
+    <!-- A tag library can register Servlet Context event listeners in
+        case it needs to react to such events. Listener entries look
+        like this: 
+     <listener>
+         <listener-class>com.mycompany.TagLibListener</listener-class> 
+     </listener>
+     -->
+    <tag>
+        <description>put description eher</description>
+        <name>responseResulTag</name>
+        <tag-class>de.fhg.fokus.provisioningsystem.client.ResponseResulTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>responseBeans</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    <tag>
+        <description>public identity row on addRequest form</description>
+        <name>publicIdentityRow</name>
+        <tag-class>de.fhg.fokus.provisioningsystem.client.ImpuRowTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>impus</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <description>put description eher</description>
+        <name>modifyRequestTag</name>
+        <tag-class>de.fhg.fokus.provisioningsystem.client.ModifyRequestTag</tag-class>
+        <body-content>scriptless</body-content>
+        <attribute>
+            <name>responseBeans</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag-file>
+        <name>impu</name>
+        <path>/WEB-INF/tags/PublicIdentity.tag</path>
+    </tag-file>
+
+    <tag-file>
+        <name>XDMSService</name>
+        <path>/WEB-INF/tags/XDMSService.tag</path>
+    </tag-file>
+    
+    <function>
+        <name>test</name>
+        <function-class>de.fhg.fokus.provisioningsystem.client.ModifyRequestTag</function-class>
+        <function-signature>
+            String test (java.util.HashMap)
+        </function-signature>
+    </function>     
+</taglib>

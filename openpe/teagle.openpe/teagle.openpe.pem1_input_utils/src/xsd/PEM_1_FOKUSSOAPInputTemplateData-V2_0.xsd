@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="urn:oma:xml:fokus:soap-pem1-input-template" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:oma:xml:fokus:soap-pem1-input-template" xmlns:Q1="urn:oma:xml:fokus:pem1-input-template">
+
+    <xs:import schemaLocation="PEM_1_FOKUSInputTemplateData-V2_0.xsd" namespace="urn:oma:xml:fokus:pem1-input-template"></xs:import>
+			
+	<xs:complexType name="event">
+		<xs:sequence>
+			<xs:element name="eventParameter" type="eventParameter" minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="eventParameter">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="name" type="xs:string" use="required"/>
+			</xs:extension>
+      </xs:simpleContent>
+   </xs:complexType>
+
+   	<xs:complexType name="FOKUSSOAPInputTemplateType">
+   		<xs:complexContent>
+   			<xs:extension base="Q1:FOKUSInputTemplateType">
+   				<xs:sequence>
+   					<xs:element name="event" type="event"></xs:element>
+   				</xs:sequence>
+   			</xs:extension>
+   		</xs:complexContent>
+   	</xs:complexType>
+</xs:schema>

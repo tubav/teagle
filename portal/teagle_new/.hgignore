@@ -1,0 +1,12 @@
+syntax: glob
+*.class
+.metadata
+.*.swp
+*.zip
+.*.swo
+.svn
+
+relre:.classpath
+relre:.settings
+relre:.project
+relre:target
