@@ -1,0 +1,7 @@
+*.class
+.metadata
+.*.swp
+*.zip
+.*.swo
+.svn
+target
